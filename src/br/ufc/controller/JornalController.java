@@ -19,6 +19,11 @@ import br.ufc.model.Usuario;
 
 @Controller
 public class JornalController {
+	
+	@RequestMapping("cabecalhoJornal")
+		public String cabecalhoJornal() {
+		return "cabecalho.jsp";
+	}
 	@RequestMapping("formularioUsuario")
 	public String formularioUsuario() {
 		return "inserir_usuario";

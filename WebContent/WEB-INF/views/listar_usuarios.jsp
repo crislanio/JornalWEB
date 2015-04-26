@@ -7,18 +7,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Listar Usuarios</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?familysRoboto:400,100,300,500,700'>
 </head>
 <body>
 
 	<c:import url="cabecalho.jsp" />
-	<div>
-		<br /> <a href="index.jsp">Página principal</a> <br /> <a
-			href="#fim"> Ir para o final</a> <br />
-	</div>
-	<h1 id="topo">
+	<h1>
 		Listar usuarios: <b>${tamanho}</b>
 	</h1>
 
@@ -44,11 +41,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<h2>Index</h2>
-	<div>
-		<a href="index.jsp">Página principal</a> <br /> <a id="fim"
-			href="#topo">ir para o topo</a> <br />
-	</div>
+	<footer> <c:import url="feed_noticias.jsp" /> </footer>
 	<footer> <c:import url="rodape.jsp" /> </footer>
 
 </body>

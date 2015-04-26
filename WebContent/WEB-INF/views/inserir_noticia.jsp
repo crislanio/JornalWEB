@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -5,10 +7,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?familysRoboto:400,100,300,500,700'>
 	<title>Inserir Noticia</title>
 </head>
 <body>
+	<c:import url="cabecalho.jsp"/>
 	<h1>Inserir Noticia</h1>
 	<form  action="adicionarNoticia" method="post">
 		Título: <input type="text" name="titulo" /> <br />
@@ -24,6 +28,7 @@
 		
 		<input type="submit" value="Inserir" /> <br />
 	</form>
-	 <a href="index.jsp">Página principal</a>
+	 <footer> <c:import url="feed_noticias.jsp" /> </footer>
+	<footer> <c:import url="rodape.jsp" /> </footer>
 </body>
 </html>

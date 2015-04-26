@@ -20,10 +20,10 @@
 				<nav>
 					<ul class="menu inline sem-marcador">
 						<li><a href="index.jsp">home</a></li>
-						<li><a href="clientes.html">clientes</a></li>
-						<li><a href="servicos.html">serviços</a></li>
-						<li><a href="sobre.html">sobre</a></li>
-						<li><a href="contato.html">contato</a></li>
+						<li><a href="assinatura.jsp">teste</a></li>
+						<li><a href="assinatura.jsp">assinatura</a></li>
+						<li><a href="contato.jsp">contato</a></li>
+						<li><a href="login.jsp">login</a></li>
 					</ul>
 				</nav>
 			</div>
