@@ -2,71 +2,132 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="pt">
 <head>
-	<title>Crislanio Macedo - Desenvolvimento Web</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?familysRoboto:400,100,300,500,700'>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Jornal Sapere Aude">
+	<meta name="author" content="Crislanio">
+
+	<title>Contate-no</title>
+
+	<!-- CSS -->
+	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
+	<link href="assets/css/simple-line-icons.css" rel="stylesheet" media="screen">
+	<link href="assets/css/animate.css" rel="stylesheet">
+    
+	<!-- Custom styles CSS -->
+	<link href="assets/css/style.css" rel="stylesheet" media="screen">
+    
+    <script src="assets/js/modernizr.custom.js"></script>
+   	
 </head>
 <body>
-	<c:import url="cabecalho.jsp"/>
+	<c:import url="includes/cabecalho.jsp"/>
 	
-	<div class="linha">
-		<section>
-			<div class="coluna col5 sidebar">
-				<h3>Localização</h3>
+	<!-- Contact start -->
+
+	<section id="contact" class="pfblock">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-6 col-sm-offset-3">
+
+					<div class="pfblock-header">
+						<h2 class="pfblock-title">Contate-nos</h2>
+						<div class="pfblock-line"></div>
+						<div class="pfblock-subtitle">
+				</br>	
 				<img src="img/cris225x300.jpg" alt="autor">
-				<ul class="sem-padding sem-marcador">
+				</br>
+				<b><span style="color: #ff6600;">Localização</span>
+				<ul >
 					<li>Rua Laerte Pinheiro, 10</li>
 					<li>Centro</li>
 					<li>Quixadá-CE</li>
 				</ul>
-				<h3>Contato direto</h3>
-				<ul class="sem-padding sem-marcador">
+				<b><span style="color: #ff6600;">Contato Direto</span>
+				<ul >
 					<li>fone:<strong>(88) 9949-3257</strong></li>
 					<li>Email:<strong>crilaniomacedo@live.com</strong></li>
 					</p>
-				<b><span style="color: #ff6600;">Site Pessoal</span>
-				</b>
-				<ul>
-					<li><span style="color: #0000ff;"><a style="color: #0000ff;" title="Blog Pessoal" href="https://www.crislaniomacedo.zz.vc" target="_blank" rel="nofollow">crislaniomacedo.zz.vc</a></span></li>
-				</ul>
 				
-				<b><span style="color: #ff6600;">CV Lattes  LinkedIn e Twitter</span>
-				</b>
-				<ul>
-					<li><span style="color: #0000ff;"><a style="color: #0000ff;" title="linkedin" href="https://www.linkedin.com/profile/view?id=281863658&amp;trk=nav_responsive_tab_profile_pic" target="_blank" rel="nofollow">linkedin</a></span></li>
-					<li><span style="color: #0000ff;"><a style="color: #0000ff;" title="lattes capes" href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8754172J0" target="_blank" rel="nofollow">capes Lattes</a></span></li>
-					<li><span style="color: #0000ff;"><a style="color: #0000ff;" title="twitter" href="https://twitter.com/crs_macedo" target="_blank" rel="nofollow">twitter</a></span></li>
-				</ul>
-				<span style="color: #ff6600;"><b>Compartilhamento</b></span>
-				<ul>
-					<li><span style="color: #0000ff;"><a style="color: #0000ff;" title="slide share" href="http://pt.slideshare.net/Crislanio_Souza" target="_blank" rel="nofollow">slideshare</a></span></li>
-					<li><span style="color: #0000ff;"><a style="color: #0000ff;" title="youtube" href="https://www.youtube.com/channel/UCHg204hXu1yrrGwoT4Ge7lg" target="_blank" rel="nofollow">youtube</a></span></li>
-					<li><span style="color: #0000ff;"><a style="color: #0000ff;" title="google sites" href="https://sites.google.com/site/crislaniocc/" target="_blank">google sites</a></span></li>
-					<li><span style="color: #0000ff;"><a style="color: #0000ff;" title="academia.edu" href="https://ufc.academia.edu/CrislanioMacedo/Papers" target="_blank">academia</a></span></li>
-				</ul>
 				</ul>
 			</div>
-			<div class="coluna col7 contato">
-				<h2>Envie sua mensagem</h2>
-				<form>
-					<label for="nome">Seu nome:</label>
-					<input type="text" name="nome" id="nome" />
-					<label for="email">Seu email:</label>
-					<input type="text" name="email" id="email" />
-					<label for="nome">Assunto:</label>
-					<input type="text" name="assunto" id="assunto" />
-					<label for="nome">Mensagem:</label>
-					<textarea name="mensagem" id="mensagem"></textarea>
-					<input type="submit" class="botao" name="enviar" value="Enviar mensagem &raquo;"/>
-				</form>
-			</div>
-		</section>
-	</div>
-  <footer> <c:import url="feed_noticiasContato.jsp" /> </footer>
-	<footer> <c:import url="rodape.jsp" /> </footer>
+						</div>
+					</div>
+
+				</div>
+
+			</div><!-- .row -->
+
+			<div class="row">
+
+				<div class="col-sm-6 col-sm-offset-3">
+
+					<form id="contact-form" role="form">
+						<div class="ajax-hidden">
+							<div class="form-group wow fadeInUp">
+								<label class="sr-only" for="c_name">Name</label>
+								<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Nome">
+							</div>
+
+							<div class="form-group wow fadeInUp" data-wow-delay=".1s">
+								<label class="sr-only" for="c_email">Email</label>
+								<input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
+							</div>
+
+							<div class="form-group wow fadeInUp" data-wow-delay=".2s">
+								<textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Mensagem"></textarea>
+							</div>
+
+							<button type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Enviar Mensagme</button>
+						</div>
+						<div class="ajax-response"></div>
+					</form>
+
+				</div>
+
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</section>
+
+	<!-- Contact end -->
+	
+
+  <!-- CallToAction start -->
+
+	<section class="calltoaction">
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-md-12 col-lg-12">
+					<h2 class="wow slideInRight" data-wow-delay=".1s">MÉTODO ALTERNATIVO DE CONTATO</h2>
+					<div class="calltoaction-decription wow slideInRight" data-wow-delay=".2s">
+						<section>
+							<p>Caso não consiga me contatar por alguns dos meios acima, possivelmente eu estarei em uma ilha deserta em algum lugar do pacífico. Neste caso há duas possibilidades:</p>
+							<ol>
+								<li>Enviar uma mensagem em uma garrafa</li>
+								<li>Tentar um sinal de fumaça</li>
+							</ol>
+							<p>Mas sinceramente não sei se algum desses métodos será eficiente , tente por sua conta e risco :D</p>
+						</section>
+					</div>
+				</div>
+
+				<div class="col-md-12 col-lg-12 calltoaction-btn wow slideInRight" data-wow-delay=".3s">
+					<a href="#contact" class="btn btn-lg">Deixe sua opinião</a>
+				</div>
+
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</section>
+
+	<!-- CallToAction end -->
+	
+	<footer> <c:import url="includes/rodape.jsp" /> </footer>
 </body>
 </html>
 

@@ -4,17 +4,12 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Listar Usuarios</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?familysRoboto:400,100,300,500,700'>
 </head>
 <body>
-
-	<c:import url="cabecalho.jsp" />
+	<c:import url="/includes/cabecalho.jsp"/>
+	
 	<h1>
 		Listar usuarios: <b>${tamanho}</b>
 	</h1>
@@ -41,8 +36,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<footer> <c:import url="feed_noticias.jsp" /> </footer>
-	<footer> <c:import url="rodape.jsp" /> </footer>
+	<footer> <c:import url="/includes/rodape.jsp" /> </footer>
 
 </body>
 </html>
