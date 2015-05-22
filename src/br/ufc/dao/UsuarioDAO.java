@@ -37,7 +37,7 @@ public class UsuarioDAO {
 		}
 	}
 	
-	public void delete_aluno(Usuario usuario) {
+	public void delete_usuario(Usuario usuario) {
 
 		String sql = "delete from usuario where login = ?";
 

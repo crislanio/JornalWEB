@@ -16,6 +16,9 @@
 						<li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".5s"><i class="fa fa-envelope"></i></a></li>
 					</ul>
 
+					<p class="heart">
+                        Feito com <span class="fa fa-heart fa-2x animated pulse"></span> em Quixadá
+                    </p>
 					<p class="copyright" align="center">
                         © 2015 Crislânio Macêdo
 					</p>

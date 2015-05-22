@@ -47,7 +47,7 @@
 				<div class="collapse navbar-collapse" id="custom-collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/Jornal/">home</a></li>
-						<li><a href="/Jornal/assinatura.jsp">teste</a></li>
+						<li><a href="/Jornal/consultar_no_dominio_ufc.jsp">consulte no dominio ufc</a></li>
 						<li><a href="/Jornal/assinatura.jsp">assinatura</a></li>
 						<li><a href="/Jornal/contato.jsp">contato</a></li>
 						<li><a href="/Jornal/login.jsp">login</a></li>

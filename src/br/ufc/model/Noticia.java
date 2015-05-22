@@ -1,6 +1,5 @@
 package br.ufc.model;
 
-import java.sql.Timestamp; // e agora ?
 import java.util.Calendar;
 import java.util.Date;
 
@@ -23,14 +22,14 @@ public class Noticia {
 	private String autor;
 	// data_noticia TIMESTAMP NOT NULL, tá certo?
 	private Date data_noticia;
-	private String id_secao;
+	private Long id_secao;
 
 	public Noticia() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public Noticia(Long id, String titulo, String subtitulo, String texto,
-			String autor, Timestamp data_noticia, String id_secao) {
+			String autor, Date data_noticia, Long id_secao) {
 		this.id = id;
 		this.titulo = titulo;
 		this.subtitulo = subtitulo;
@@ -126,14 +125,15 @@ public class Noticia {
 	 * @param data_noticia
 	 *            the data_noticia to set
 	 */
-	public void setData_noticia(Timestamp data_noticia) {
-		this.data_noticia = data_noticia;
+	public void setData_noticia(String data_noticia) {
+		this.data_noticia = Noticia.convertStringToDate(data_noticia);
+//		this.data_noticia = new Date();
 	}
 
 	/**
 	 * @return the id_secao
 	 */
-	public String getId_secao() {
+	public Long getId_secao() {
 		return id_secao;
 	}
 
@@ -141,7 +141,7 @@ public class Noticia {
 	 * @param id_secao
 	 *            the id_secao to set
 	 */
-	public void setId_secao(String id_secao) {
+	public void setId_secao(Long id_secao) {
 		this.id_secao = id_secao;
 	}
 
@@ -151,13 +151,13 @@ public class Noticia {
 		int month = Integer.parseInt(strDate.split("/")[1]);
 		int year = Integer.parseInt(strDate.split("/")[2]);
 
-		// int day = Integer.parseInt(strDate.split("-")[2]);
-		// int month = Integer.parseInt(strDate.split("-")[1]);
-		// int year = Integer.parseInt(strDate.split("-")[0]);
+		//int day = Integer.parseInt(strDate.split("-")[2]);
+		//int month = Integer.parseInt(strDate.split("-")[1]);
+		//int year = Integer.parseInt(strDate.split("-")[0]);
 
 		Date date = null;
 
-		// date = new Da
+		// date = new Date
 		Calendar calendar = Calendar.getInstance();
 		calendar.set(year, month - 1, day);
 
