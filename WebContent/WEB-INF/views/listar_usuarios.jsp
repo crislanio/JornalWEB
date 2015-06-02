@@ -8,8 +8,8 @@
 <head>
 </head>
 <body>
-	<c:import url="/includes/cabecalho.jsp"/>
-	
+	<c:import url="/includes/cabecalho.jsp" />
+
 	<h1>
 		Listar usuarios: <b>${tamanho}</b>
 	</h1>
@@ -31,12 +31,18 @@
 					<td>${usuario.senha}</td>
 					<td>${usuario.nome}</td>
 					<td>${usuario.email}</td>
-					<td><a href="deletarUsuario?login=${usuario.login}"> Excluir </a></td>
+					<td><a href="deletarUsuario?login=${usuario.login}">
+							Excluir </a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-	<footer> <c:import url="/includes/rodape.jsp" /> </footer>
-
+	<div class="linha">
+		<section>
+			<footer>
+				<c:import url="/includes/rodape.jsp" />
+			</footer>
+		</section>
+	</div>
 </body>
 </html>

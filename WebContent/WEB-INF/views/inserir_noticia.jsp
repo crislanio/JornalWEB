@@ -17,13 +17,21 @@
 	<form  action="adicionarNoticia" method="post">
 		Título: <input type="text" name="titulo" /> <br />
 		<form:errors cssStyle="color:red" path="noticia.titulo"/> <br />
+		
+ 
+		<select name="id" >
+			<c:forEach var="secao" items = "${categoriaNoticias}">
+				<option value=" ${secao.id} ">${secao.titulo}</option>
+			</c:forEach>
+		</select>
+			
 		Subtítulo: <input type="text" name="subtitulo" /> <br />
 		<form:errors cssStyle="color:red" path="noticia.subtitulo"/> <br />
 		Texto: <textarea name="texto" id="mensagem"></textarea><br />
 		<form:errors cssStyle="color:red" path="noticia.texto"/> <br />
 		Autor: <input type="text" name="autor" /> <br />
 		<form:errors cssStyle="color:red" path="noticia.autor"/> <br />
-		Data da Notícia: <input type="text" name="data_noticia" /> <br />
+		Data da Notícia: <input type="date" name="data_noticia" /> <br />
 		<form:errors cssStyle="color:red" path="noticia.data_noticia"/> <br />
 		
 		<input type="submit" value="Inserir" /> <br />

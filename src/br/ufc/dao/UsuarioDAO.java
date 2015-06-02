@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Vector;
 
 import br.ufc.model.Usuario;
 
@@ -27,7 +28,7 @@ public class UsuarioDAO {
 			stmt.setString(2, usuario.getLogin());
 			stmt.setString(3, usuario.getSenha());
 			stmt.setString(4, usuario.getEmail());
-			
+
 			stmt.execute();
 			stmt.close();
 			conn.close();
@@ -36,7 +37,7 @@ public class UsuarioDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void delete_usuario(Usuario usuario) {
 
 		String sql = "delete from usuario where login = ?";
@@ -56,7 +57,7 @@ public class UsuarioDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public ArrayList<Usuario> getListar() {
 		ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
@@ -82,6 +83,57 @@ public class UsuarioDAO {
 			e.printStackTrace();
 		}
 		return usuarios;
+	}
+
+	public Vector<Usuario> buscarUsuarios(Usuario usu) {
+		Vector<Usuario> resultados = new Vector<Usuario>();
+		String sql = ("SELECT * FROM usuario WHERE login LIKE '"
+				+ usu.getLogin() + "%';");
+		ResultSet rs;
+		try {
+			PreparedStatement comando = conn.prepareStatement(sql);
+
+			rs = comando.executeQuery();
+
+			while (rs.next()) {
+				Usuario temp = new Usuario();
+				temp.setNome(rs.getString(1));
+				temp.setLogin(rs.getString(2));
+				temp.setSenha(rs.getString(3));
+				temp.setEmail(rs.getString(4));
+				resultados.add(temp);
+			}
+			rs.close();
+			comando.close();
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return resultados;
+	}
+
+	public Usuario getUsuario(Usuario usu) {
+		String sql = "SELECT * FROM usuario WHERE login = " + usu.getLogin();
+		Usuario temp = new Usuario();
+		ResultSet rs;
+		try {
+
+			PreparedStatement comando = conn.prepareStatement(sql);
+
+			rs = comando.executeQuery();
+
+			while (rs.next()) {
+				temp.setNome(rs.getString(1));
+				temp.setLogin(rs.getString(2));
+				temp.setSenha(rs.getString(3));
+				temp.setEmail(rs.getString(4));
+			}
+			rs.close();
+			comando.close();
+		} catch (SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+		return temp;
 	}
 
 }

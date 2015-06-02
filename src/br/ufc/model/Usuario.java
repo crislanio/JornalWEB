@@ -1,5 +1,7 @@
 package br.ufc.model;
 
+import java.util.Collection;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -16,8 +18,18 @@ public class Usuario {
 	@Size(min = 6)
 	private String senha;
 
+	private Collection<Role> listaPapeis;
+
 	public Usuario() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public Collection<Role> getListaPapeis() {
+		return listaPapeis;
+	}
+
+	public void setListaPapeis(Collection<Role> roleList) {
+		this.listaPapeis = roleList;
 	}
 
 	public Usuario(String login, String nome, String email, String senha) {
@@ -26,7 +38,6 @@ public class Usuario {
 		this.email = email;
 		this.senha = senha;
 	}
-
 
 	/**
 	 * @return the login

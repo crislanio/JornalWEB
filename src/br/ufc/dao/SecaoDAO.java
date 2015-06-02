@@ -2,7 +2,9 @@ package br.ufc.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import br.ufc.model.Secao;
 import br.ufc.model.Usuario;
@@ -33,4 +35,31 @@ public class SecaoDAO {
 			e.printStackTrace();
 		}
 	}
+
+	public ArrayList<Secao> getListar() {
+		ArrayList<Secao> secoes = new ArrayList<Secao>();
+
+		String sql = "SELECT titulo,descricao FROM secao";
+
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				Secao u = new Secao();
+				u.setTitulo(rs.getString(1));
+				u.setDescricao(rs.getString(2));
+				secoes.add(u);
+
+			}
+			rs.close();
+			stmt.close();
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return secoes;
+	}
+
 }

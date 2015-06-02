@@ -5,7 +5,6 @@ import javax.validation.constraints.Size;
 
 public class Role {
 	@NotNull
-	@Size(min = 8)
 	private String login;
 	@NotNull
 	private String role;
@@ -22,7 +21,7 @@ public class Role {
 	/**
 	 * @return the login
 	 */
-	public String getLogin() {
+	public String getId() {
 		return login;
 	}
 
@@ -30,8 +29,8 @@ public class Role {
 	 * @param login
 	 *            the login to set
 	 */
-	public void setLogin(String login) {
-		this.login = login;
+	public void setId(String l) {
+		this.login = l;
 	}
 
 	/**
@@ -49,14 +48,11 @@ public class Role {
 		this.role = role;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
-		return "Role [login=" + login + ", role=" + role + "]";
+		return "Role [id=" + login + ", role=" + role + "]";
 	}
+
+
 
 }

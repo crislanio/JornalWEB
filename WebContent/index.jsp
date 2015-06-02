@@ -9,6 +9,8 @@
 	<c:import url="includes/apresentacao.jsp"/>
 	<c:import url="includes/cabecalho.jsp"/>
 	
+		<a href="autenticacao_login"> Logar</a> <br><br>
+		
 	<div class="linha">
 		<section>
 			<c:import url="includes/secao_extra.jsp"/>
