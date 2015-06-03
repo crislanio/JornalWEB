@@ -1,6 +1,7 @@
 package br.ufc.model;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -19,6 +20,8 @@ public class Usuario {
 	private String senha;
 
 	private Collection<Role> listaPapeis;
+	private List<Role> papeis;
+	
 
 	public Usuario() {
 		// TODO Auto-generated constructor stub
@@ -97,6 +100,14 @@ public class Usuario {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public boolean verifica(String papel) {
+		for (Role r : papeis) {
+			if (r.getRole().equals(papel))
+				return true;
+		}
+		return false;
 	}
 
 	/*

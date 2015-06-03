@@ -113,8 +113,12 @@ public class UsuarioDAO {
 	}
 
 	public Usuario getUsuario(Usuario usu) {
-		String sql = "SELECT * FROM usuario WHERE login = " + usu.getLogin();
+		/*String sql = ("SELECT * FROM usuario WHERE login LIKE '"
+				+ usu.getLogin() + "%';");  // tá vindo null !! e agora
+		*/
+		String sql = "select * from usuario where login =" + usu.getLogin();
 		Usuario temp = new Usuario();
+		System.out.println("getUsuario "+sql);
 		ResultSet rs;
 		try {
 
@@ -136,4 +140,27 @@ public class UsuarioDAO {
 		return temp;
 	}
 
+	public Usuario getUsuarioSql(String usu) {
+		String sql = "SELECT * FROM usuario WHERE login = " + usu;
+		Usuario temp = new Usuario();
+		ResultSet rs;
+		try {
+
+			PreparedStatement comando = conn.prepareStatement(sql);
+
+			rs = comando.executeQuery();
+
+			while (rs.next()) {
+				temp.setNome(rs.getString(1));
+				temp.setLogin(rs.getString(2));
+				temp.setSenha(rs.getString(3));
+				temp.setEmail(rs.getString(4));
+			}
+			rs.close();
+			comando.close();
+		} catch (SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+		return temp;
+	}
 }

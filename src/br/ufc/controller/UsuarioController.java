@@ -42,13 +42,16 @@ public class UsuarioController {
 
 		List<Role> papeis = new ArrayList<Role>();
 
-		System.out.println("teste!");
+		System.out.println("teste aqui!");
 		papeis.add(papelDAO.getRole(role)); // addAll tava add, 
-
+		System.out.println("teste 2!");
+		
 		usuario.setListaPapeis(papeis);
-
+		System.out.println("teste 3!");
+		
 		aDAO.inserir(usuario);
-
+		System.out.println("teste 4!");
+		
 		try {
 			conn.close();
 		} catch (SQLException e) {
@@ -98,41 +101,4 @@ public class UsuarioController {
 		return "redirect:listarUsuario";
 	}
 
-	@RequestMapping("login")
-	public String realizaLogin(){
-		System.out.println("logado");
-		return "login";
-	}
-
-	@RequestMapping("autenticacao_login")
-	public String verificaLogin(Usuario usu, HttpSession session){
-		FabricaDeConexoes fc = new FabricaDeConexoes();
-		Connection conn = fc.getConexao();
-		UsuarioDAO aDAO = new UsuarioDAO(conn);
-		RoleDAO papelDAO = new RoleDAO(conn);
-		
-		System.out.println("Aqui");
-		if(aDAO.getUsuario(usu) != null){
-			if(usu.getLogin().equals(aDAO.getUsuario(usu).getLogin()) 
-					&& usu.getSenha().equals(aDAO.getUsuario(usu).getSenha()) ){
-				session.setAttribute("usuario_logado", aDAO.getUsuario(usu));
-
-				System.out.println("nome >"+usu.getNome());
-				System.out.println("nome >>"+aDAO.getUsuario(usu).getNome());
-				return "sessao/principal";
-			}
-			else{
-				System.out.println("veio aqui");
-
-				//Retornar mensagem de erro
-				return "redirect:login";
-			}
-		}
-		else{
-			System.out.println("ate aqui");
-
-			//Retornar mensagem de erro
-			return "redirect:login";
-		}	
-	}
 }

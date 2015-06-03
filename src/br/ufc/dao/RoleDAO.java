@@ -103,7 +103,7 @@ public class RoleDAO {
 		return resultados;
 	}
 	public Role getRole(Role role) {
-		String sql = "SELECT * FROM role WHERE id = " + role.getId();
+		String sql = "SELECT * FROM role WHERE login = " + role.getId();
 		Role temp = new Role();
 		ResultSet rs;
 		try {
@@ -123,6 +123,27 @@ public class RoleDAO {
 		}
 		return temp;
 	}
+	// sobrescrito
+	public Role getRole(String role) {
+		String sql = "SELECT * FROM role WHERE login = " + role;
+		Role temp = new Role();
+		ResultSet rs;
+		try {
 
+			PreparedStatement comando = conn.prepareStatement(sql);
+
+			rs = comando.executeQuery();
+
+			while (rs.next()) {
+				temp.setId(rs.getString(1));
+				temp.setRole(rs.getString(2));
+			}
+			rs.close();
+			comando.close();
+		} catch (SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+		return temp;
+	}
 	
 }
