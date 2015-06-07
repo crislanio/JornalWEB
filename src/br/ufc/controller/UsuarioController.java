@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -26,7 +25,7 @@ public class UsuarioController {
 		return "inserir_usuario";
 	}
 	@RequestMapping("adicionarUsuario")
-	public String adicionarUsuario(@Valid Usuario usuario, BindingResult result) {
+	public String adicionarUsuario(@Valid Usuario usuario, BindingResult result, Role role) {
 
 		if (result.hasErrors()) {
 			return "inserir_usuario";
@@ -36,7 +35,23 @@ public class UsuarioController {
 		Connection conn = fc.getConexao();
 		UsuarioDAO aDAO = new UsuarioDAO(conn);
 		RoleDAO papelDAO = new RoleDAO(conn);
-		Role role = new Role();
+		
+		System.out.println(usuario.getNome());
+		System.out.println(usuario.getEmail());
+		System.out.println(role.getId()); // tá vindo null
+		
+		Role papel = papelDAO.getRole(role); // retorna um ROLE
+		List<Role> papeis = new ArrayList<Role>(); 
+		papeis.add(papel);
+		
+		usuario.setRoles(papeis);
+	
+		//Adcionar usuario com o papel 
+		aDAO.inserir(usuario);
+				
+		return "usuario_adicionado";
+	
+		/*Role role = new Role();
 		
 //		role.setId(1); // obs: pedindo pra mudar pra int de long
 
@@ -60,6 +75,8 @@ public class UsuarioController {
 		}
 
 		return "usuario_adicionado";
+*/	
+
 	}
 
 	@RequestMapping("listarUsuario")

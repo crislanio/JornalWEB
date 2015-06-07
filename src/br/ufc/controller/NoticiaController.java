@@ -13,10 +13,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.ufc.dao.ClassificadoDAO;
 import br.ufc.dao.FabricaDeConexoes;
 import br.ufc.dao.NoticiaDAO;
 import br.ufc.dao.SecaoDAO;
 import br.ufc.dao.UsuarioDAO;
+import br.ufc.model.Classificado;
 import br.ufc.model.Noticia;
 import br.ufc.model.Role;
 import br.ufc.model.Secao;
@@ -65,7 +67,18 @@ public class NoticiaController {
 			e.printStackTrace();
 		}
 
-		return "noticia_adicionado";
+		return "listarNoticia";
 	}
+	@RequestMapping("listarNoticia")
+	public String listaNoticia(Model model){
+		FabricaDeConexoes fc = new FabricaDeConexoes();
+		Connection conn = fc.getConexao();
+		NoticiaDAO cDAO = new NoticiaDAO(conn);
+		
 
-}
+		List<Noticia> c = cDAO.getListar();
+		model.addAttribute("noticias", c);
+		return "noticias";
+	}
+	
+	}

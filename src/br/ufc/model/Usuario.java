@@ -19,9 +19,18 @@ public class Usuario {
 	@Size(min = 6)
 	private String senha;
 
+	private List<Role> roles;
+
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
 	private Collection<Role> listaPapeis;
 	private List<Role> papeis;
-	
 
 	public Usuario() {
 		// TODO Auto-generated constructor stub

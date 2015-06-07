@@ -24,7 +24,11 @@
 	</form>
 	
 	
-	 <footer> <c:import url="/includes/feed_noticias.jsp" /> </footer>
-	<footer> <c:import url="/includes/rodape.jsp" /> </footer>
+	<div class="linha">
+		<section>
+		 <footer> <c:import url="/includes/feed_noticias.jsp" /> </footer>
+		<footer> <c:import url="/includes/rodape.jsp" /> </footer>
+		</section>
+	</div>
 </body>
 </html>

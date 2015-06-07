@@ -26,7 +26,7 @@ public class SecaoController {
 	@RequestMapping("formularioSecao")
 	public String secaoForm(HttpSession session) {
 		Role role = (Role) session.getAttribute("role");
-		if (role != null && role.getRole().equals("Editor"))
+		if (role != null && role.getRole().equals("editor"))
 			return "cadastrar_secao";
 		else
 			return "redirect:efetuarLogin";
@@ -37,7 +37,9 @@ public class SecaoController {
 		FabricaDeConexoes fc = new FabricaDeConexoes();
 		Connection conn = fc.getConexao();
 		SecaoDAO uDAO = new SecaoDAO(conn);
-		if (session != null) {
+		
+		/*	
+		  if (session != null) {
 			System.out.println("teste 1");
 
 			Role role = (Role) session.getAttribute("role");
@@ -51,6 +53,10 @@ public class SecaoController {
 			}
 		}
 		return "redirect:efetuarLogin";
+*/
+		System.out.println(secao.getTitulo());
+		System.out.println(secao.getDescricao());
+		uDAO.inserir(secao);
+		return "secao_adicionado";
 	}
-
 }

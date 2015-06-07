@@ -37,11 +37,9 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<div class="linha">
+<div class="linha">
 		<section>
-			<footer>
-				<c:import url="/includes/rodape.jsp" />
-			</footer>
+	<footer> <c:import url="/includes/rodape.jsp" /> </footer>
 		</section>
 	</div>
 </body>

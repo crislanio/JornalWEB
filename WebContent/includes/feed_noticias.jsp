@@ -9,16 +9,9 @@
 <title>Feed de Notícias</title>
 </head>
 <body>
+<center>
 <div class="conteudo-extra">
-		<div class="linha">
-			<div class="coluna col5">
-				<section>
-					<h2>Curiosidades</h2>
-					<p>Lorem ipsum dolor sit amet, consectur adipisicing elit, Odit error ipsam, perspiciatis ratione nobis magni</p>
-					<p>Lorem ipsum dolor sit amet, consectur adipisicing elit, Odit error ipsam, perspiciatis ratione nobis magni</p>
-					<p>Lorem ipsum dolor sit amet, consectur adipisicing elit, Odit error ipsam, perspiciatis ratione nobis magni</p>
-				</section>
-			</div>
+		
 			<div class="coluna col5">
 			
 			<a class="twitter-timeline" href="https://twitter.com/UFCinforma" data-widget-id="592398058639499266">Tweets de @UFCinforma</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
@@ -26,5 +19,6 @@
 			</div>
 		</div>
 	</div> 
+</center>
 </body>
 </html>
