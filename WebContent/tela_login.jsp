@@ -16,18 +16,6 @@
 	<meta name="author" content="Crislânio Macêdo">
 
 	<title>Seção Extra</title>
-
-	<!-- CSS -->
-	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
-	<link href="assets/css/simple-line-icons.css" rel="stylesheet" media="screen">
-	<link href="assets/css/animate.css" rel="stylesheet">
-    
-	<!-- Custom styles CSS -->
-	<link href="assets/css/style.css" rel="stylesheet" media="screen">
-    
-    <script src="assets/js/modernizr.custom.js"></script>
-
 </head>
 <body>
 <c:import url="includes/cabecalho.jsp"/>
@@ -36,49 +24,16 @@
 	</c:if>
 	
 	<p align="left">
-		<h1>EFETUAR LOGIN </h1>
-		<form  action="fazer_login" method="post">
+		<h3>EFETUAR LOGIN </h3>
+		<form  action="fazerLogin" method="post">
 		Login :<input type="text" name="login"><br>
 		Senha :<input type="password" name="senha"><br>
 		<input type="submit" name="logar"> <br>
 
 	</form>
 	</p>
-	<section id="services" class="pfblock pfblock-gray">
 	
-	<div class="row">
-
-				<div class="col-sm-3">
-
-					<div class="iconbox wow slideInLeft">
-						<div class="iconbox-icon">
-							<span class="icon-magic-wand"></span>
-						</div>
-						<div class="iconbox-text">
-							<h3 class="iconbox-title">Inserir Usuário</h3>
-							<div class="iconbox-desc">
-								<a href="formularioUsuario">Inserir Usuario no Jornal</a>
-							</div>
-						</div>
-					</div>
-
-				</div>
-	</section>
 	
 	<footer> <c:import url="includes/rodape.jsp" /> </footer>
-
-<!-- Javascript files -->
-
-	<script src="assets/js/jquery-1.11.1.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/js/jquery.parallax-1.1.3.js"></script>
-	<script src="assets/js/imagesloaded.pkgd.js"></script>
-	<script src="assets/js/jquery.sticky.js"></script>
-	<script src="assets/js/smoothscroll.js"></script>
-	<script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/jquery.easypiechart.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.cbpQTRotator.js"></script>
-	<script src="assets/js/custom.js"></script>
 </body>
 </html>

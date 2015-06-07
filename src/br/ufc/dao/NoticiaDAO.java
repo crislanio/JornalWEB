@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import br.ufc.model.Classificado;
 import br.ufc.model.Noticia;
+import br.ufc.model.Usuario;
 
 public class NoticiaDAO {
 	private Connection conn;
@@ -44,6 +45,39 @@ public class NoticiaDAO {
 			e.printStackTrace();
 		}
 	}
+	public Noticia getNoticia(Noticia usu) {
+		/*String sql = ("SELECT * FROM usuario WHERE login LIKE '"
+				+ usu.getLogin() + "%';");  // tá vindo null !! e agora
+		*/
+		String sql = "select * from noticia where id =" + usu.getId();
+		Noticia temp = new Noticia();
+		System.out.println("getNoticia "+sql);
+		ResultSet rs;
+		try {
+
+			PreparedStatement comando = conn.prepareStatement(sql);
+
+			rs = comando.executeQuery();
+
+			while (rs.next()) {
+				temp.setId(rs.getLong(1));
+				temp.setTitulo(rs.getString(2));
+				temp.setSubtitulo(rs.getString(3));
+				temp.setAutor(rs.getString(4));
+				
+				// falta data
+				temp.setId_secao(rs.getLong(5));
+				
+						
+			}
+			rs.close();
+			comando.close();
+		} catch (SQLException ex) {
+			throw new RuntimeException(ex);
+		}
+		return temp;
+	}
+	
 	public ArrayList<Noticia> getListar() {
 		ArrayList<Noticia> noticias = new ArrayList<Noticia>();
 

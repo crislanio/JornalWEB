@@ -17,8 +17,6 @@
 	<form  action="adicionarNoticia" method="post">
 		Título: <input type="text" name="titulo" /> <br />
 		<form:errors cssStyle="color:red" path="noticia.titulo"/> <br />
-		
- 
 		<select name="id" >
 			<c:forEach var="secao" items = "${categoriaNoticias}">
 				<option value=" ${secao.id} ">${secao.titulo}</option>

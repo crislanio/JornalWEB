@@ -28,14 +28,29 @@ import br.ufc.model.Usuario;
 public class NoticiaController {
 	// notícia
 
+	@RequestMapping("verNoticia")
+	public String lerNoticia(Noticia noticia,Model model){
+		FabricaDeConexoes fc = new FabricaDeConexoes();
+		Connection conn = fc.getConexao();
+		NoticiaDAO uDAO = new NoticiaDAO(conn);
+		
+		noticia = uDAO.getNoticia(noticia);
+		model.addAttribute("noticia",noticia);
+		return "noticias";
+	}
+	
 	@RequestMapping("formularioNoticia")
 	public String formularioNoticia(Model model, HttpSession session) {
 		FabricaDeConexoes fc = new FabricaDeConexoes();
 		Connection conn = fc.getConexao();
 		SecaoDAO uDAO = new SecaoDAO(conn);
 		List<Secao> secoes = uDAO.getListar();
-
-		Usuario usuario = (Usuario) session.getAttribute("usuario");
+		
+		/*model.addAttribute("secoes",secoes);
+		return "formularioNoticia";
+		*/
+		
+		  Usuario usuario = (Usuario) session.getAttribute("usuario");
 		Role role = (Role) session.getAttribute("role");
 		if (usuario != null
 				&& (role.getRole().equals("Jornalista") || role.getRole()
@@ -45,6 +60,7 @@ public class NoticiaController {
 
 		}
 		return "inserir_noticia";
+		
 	}
 
 	@RequestMapping("adicionarNoticia")

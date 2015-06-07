@@ -22,7 +22,7 @@ public class LoginController2 {
 		return "tela_login";
 	}
 
-	@RequestMapping("fazer_login")
+	@RequestMapping("fazerLogin")
 	public String efetuaLogin(Usuario usuario, HttpSession session) {
 		FabricaDeConexoes fc = new FabricaDeConexoes();
 		Connection conn = fc.getConexao();
