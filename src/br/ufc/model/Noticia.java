@@ -1,13 +1,28 @@
 package br.ufc.model;
 
-import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+@Entity
+@Table(name="noticia")
 public class Noticia {
-	private Long id;
+	
+	@Id
+	@GeneratedValue
+	@Column(name="id_noticia", nullable=false)
+	private long id_noticia;
 	@NotNull
 	@Size(min = 10)
 	private String titulo;
@@ -15,169 +30,105 @@ public class Noticia {
 	@Size(min = 5)
 	private String subtitulo;
 	@NotNull
-	@Size(min = 100)
+	@Size(min = 50)
 	private String texto;
-	@NotNull
-	@Size(min = 8)
-	private String autor;
-	// data_noticia TIMESTAMP NOT NULL, tá certo?
 	private Date data_noticia;
-	private Long id_secao;
+	
+	
 
-	public Noticia() {
-		// TODO Auto-generated constructor stub
+	@ManyToOne(optional=false)
+	@JoinColumn(name="id_autor",referencedColumnName="id_usuario")
+	private Usuario autor;
+
+	
+	@ManyToOne(optional=false)
+	@JoinColumn(name="id_secao",referencedColumnName="id_secao")
+	private Secao secao;
+	
+	
+	@OneToMany(mappedBy="noticia",targetEntity=Comentario.class,cascade=CascadeType.ALL)
+	private List<Comentario> comentarios;
+
+
+	public long getId_noticia() {
+		return id_noticia;
 	}
 
-	public Noticia(Long id, String titulo, String subtitulo, String texto,
-			String autor, Date data_noticia, Long id_secao) {
-		this.id = id;
-		this.titulo = titulo;
-		this.subtitulo = subtitulo;
-		this.texto = texto;
-		this.autor = autor;
-		this.data_noticia = data_noticia;
-		this.id_secao = id_secao;
+
+	public void setId_noticia(long id_noticia) {
+		this.id_noticia = id_noticia;
 	}
 
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
-	}
 
-	/**
-	 * @param id
-	 *            the id to set
-	 */
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	/**
-	 * @return the titulo
-	 */
 	public String getTitulo() {
 		return titulo;
 	}
 
-	/**
-	 * @param titulo
-	 *            the titulo to set
-	 */
+
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
 
-	/**
-	 * @return the subtitulo
-	 */
+
 	public String getSubtitulo() {
 		return subtitulo;
 	}
 
-	/**
-	 * @param subtitulo
-	 *            the subtitulo to set
-	 */
+
 	public void setSubtitulo(String subtitulo) {
 		this.subtitulo = subtitulo;
 	}
 
-	/**
-	 * @return the texto
-	 */
+
 	public String getTexto() {
 		return texto;
 	}
 
-	/**
-	 * @param texto
-	 *            the texto to set
-	 */
+
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
 
-	/**
-	 * @return the autor
-	 */
-	public String getAutor() {
-		return autor;
-	}
 
-	/**
-	 * @param autor
-	 *            the autor to set
-	 */
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
-
-	/**
-	 * @return the data_noticia
-	 */
 	public Date getData_noticia() {
 		return data_noticia;
 	}
 
-	/**
-	 * @param data_noticia
-	 *            the data_noticia to set
-	 */
-	public void setData_noticia(String data_noticia) {
-		this.data_noticia = Noticia.convertStringToDate(data_noticia);
-//		this.data_noticia = new Date();
+
+	public void setData_noticia(Date data_noticia) {
+		this.data_noticia = data_noticia;
 	}
 
-	/**
-	 * @return the id_secao
-	 */
-	public Long getId_secao() {
-		return id_secao;
+
+	public Usuario getAutor() {
+		return autor;
 	}
 
-	/**
-	 * @param id_secao
-	 *            the id_secao to set
-	 */
-	public void setId_secao(Long id_secao) {
-		this.id_secao = id_secao;
+
+	public void setAutor(Usuario autor) {
+		this.autor = autor;
 	}
 
-	public static Date convertStringToDate(String strDate) {
 
-		int day = Integer.parseInt(strDate.split("/")[0]);
-		int month = Integer.parseInt(strDate.split("/")[1]);
-		int year = Integer.parseInt(strDate.split("/")[2]);
-
-		//int day = Integer.parseInt(strDate.split("-")[2]);
-		//int month = Integer.parseInt(strDate.split("-")[1]);
-		//int year = Integer.parseInt(strDate.split("-")[0]);
-
-		Date date = null;
-
-		// date = new Date
-		Calendar calendar = Calendar.getInstance();
-		calendar.set(year, month - 1, day);
-
-		date = calendar.getTime();
-
-		return date;
-
+	public Secao getSecao() {
+		return secao;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Noticia [id=" + id + ", titulo=" + titulo + ", subtitulo="
-				+ subtitulo + ", texto=" + texto + ", autor=" + autor
-				+ ", data_noticia=" + data_noticia + ", id_secao=" + id_secao
-				+ "]";
+
+	public void setSecao(Secao secao) {
+		this.secao = secao;
 	}
 
+
+	public List<Comentario> getComentarios() {
+		return comentarios;
+	}
+
+
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
+	}
+	
+	
+	
 }

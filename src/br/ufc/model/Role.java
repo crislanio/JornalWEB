@@ -1,58 +1,69 @@
 package br.ufc.model;
 
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
+
+@Entity
+@Table(name="role")
 public class Role {
+	
+	@Id
+	@GeneratedValue
+	@Column(name="id_role")
+	private long id_role;
 	@NotNull
-	private String login;
-	@NotNull
-	private String role;
+	@Column(name="papel")
+	private String papel;
+	
+	
+	
+	@ManyToMany(mappedBy="roles", fetch = FetchType.LAZY)
+	private List<Usuario> usuarios;
 
-	public Role() {
-		// TODO Auto-generated constructor stub
-	}
 
-	public Role(String login, String role) {
-		this.login = login;
-		this.role = role;
-	}
 
-	/**
-	 * @return the login
-	 */
-	public String getId() {
-		return login;
-	}
-
-	/**
-	 * @param login
-	 *            the login to set
-	 */
-	public void setId(String l) {
-		this.login = l;
-	}
-
-	/**
-	 * @return the role
-	 */
-	public String getRole() {
-		return role;
-	}
-
-	/**
-	 * @param role
-	 *            the role to set
-	 */
-	public void setRole(String role) {
-		this.role = role;
-	}
-
-	@Override
-	public String toString() {
-		return "Role [id=" + login + ", role=" + role + "]";
+	public long getId_role() {
+		return id_role;
 	}
 
 
 
+	public void setId_role(long id_role) {
+		this.id_role = id_role;
+	}
+
+
+
+	public String getPapel() {
+		return papel;
+	}
+
+
+
+	public void setPapel(String papel) {
+		this.papel = papel;
+	}
+
+
+
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+	
+	
 }

@@ -9,7 +9,7 @@
 	<%-- <c:import url="includes/apresentacao.jsp"/>
 	 --%><c:import url="includes/cabecalho.jsp"/>
 	
-		<a href="Login"> Logar</a> <br><br>
+		<!-- <a href="Login"> Logar</a> <br><br> -->
 		
 	<div class="linha">
 		<section>
@@ -27,7 +27,9 @@
 	</center>
 	<div class="linha">
 		<section>
-	<footer> <c:import url="includes/rodape.jsp" /> </footer>
+			<footer> 
+				<c:import url="includes/rodape.jsp" />
+			 </footer>
 		</section>
 	</div>
 </body>

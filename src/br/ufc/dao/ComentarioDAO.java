@@ -1,42 +1,67 @@
 package br.ufc.dao;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Timestamp;
+import java.util.List;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
 
 import br.ufc.model.Comentario;
-import br.ufc.model.Noticia;
-import br.ufc.model.Usuario;
 
+
+@Repository
 public class ComentarioDAO {
-	private Connection conn;
 
-	public ComentarioDAO(Connection conn) {
-		this.conn = conn;
+	@PersistenceContext
+	private EntityManager manager;
+	
+	public ComentarioDAO() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void add(Comentario comentario) {
+		// TODO Auto-generated method stub
+		
+		
+		this.manager.persist(comentario);
+				
+		
 	}
 
-	public void inserir(Comentario comentario) {
-		// contruindo o SQL de inserção
-		String sql = "INSERT INTO comentario " + "(noticia,autor,texto)"
-				+ "values (?,?,?)";
-		// e o id da seção ?
-		try {
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setLong(1, comentario.getNoticia()); // como eu falei é int?
-			stmt.setString(2, comentario.getAutor());
-			stmt.setString(3, comentario.getTexto());
+	public void deletar(Comentario comentario) {
+		// TODO Auto-generated method stub
+		Comentario comentario2 =  buscar(comentario);
+		
 
-			stmt.execute();
-			stmt.close();
-			conn.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		this.manager.remove(comentario2);
+
+		
 	}
+
+	public void alterar(Comentario comentario) {
+		// TODO Auto-generated method stub
+		
+	
+		this.manager.merge(comentario);
+	
+		
+		
+		
+	}
+
+	public List<Comentario> listar() {
+		String hql = "select c from Comentario c";
+		return this.manager.createQuery(hql,Comentario.class).getResultList();
+	}
+
+	public Comentario buscar(Comentario comentario) {
+		// TODO Auto-generated method stub
+		Comentario comentario2 = this.manager.find(Comentario.class, comentario.getId_comentario());
+		return comentario2;
+	}
+
+	
+
+	
 }
