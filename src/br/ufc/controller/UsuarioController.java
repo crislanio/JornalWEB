@@ -26,6 +26,15 @@ public class UsuarioController {
 	@Autowired
 	private RoleDAO roleDAO;
 	
+	@RequestMapping("formularioUsuario")
+	public String formularioUsuario(){
+		return "usuario/inserir_usuario";
+	}
+	@RequestMapping("cadastrar_jornalista")
+	public String formularioJornalista(){
+		return "usuario/formularioJornalista";
+	}
+	
 	@RequestMapping("adicionarUsuario")
 	public String addLeitor(Usuario usuario,Role role){
 		System.out.println(usuario.getNome());
@@ -40,7 +49,7 @@ public class UsuarioController {
 		
 		usuarioDAO.add(usuario);
 				
-		return "usuario/usuario_cadastrado";
+		return "usuario/usuario_adicionado";
 	}
 	
 	

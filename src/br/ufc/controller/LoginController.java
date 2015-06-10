@@ -22,7 +22,7 @@ public class LoginController {
 
 	@RequestMapping("formularioLogin")
 	public String formularioLogin() {
-		return "usuario/login";
+		return "login/login";
 	}
 
 	@RequestMapping("fazerLogin")

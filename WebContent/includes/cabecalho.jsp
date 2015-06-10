@@ -50,7 +50,7 @@
 						<li><a href="/Jornal/consultar_no_dominio_ufc.jsp">consulte no dominio ufc</a></li>
 						<li><a href="/Jornal/noticias.jsp">Ver Notícias</a></li>
 						<li><a href="/Jornal/contato.jsp">contato</a></li>
-						<li><a href="/Jornal/tela_login.jsp">login</a></li>
+						<li><a href="/Jornal/formularioLogin">login</a></li>
 					
 						<li>
 							<!-- INICIO PLUGIN FACEBOOK -->	
