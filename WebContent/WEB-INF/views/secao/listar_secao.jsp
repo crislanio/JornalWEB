@@ -11,28 +11,23 @@
 	<c:import url="/includes/cabecalho.jsp" />
 
 	<h1>
-		Listar usuarios: <b>${tamanho}</b>
+		Listar Seções: <b>${tamanho}</b>
 	</h1>
-
+	
 	<table align="center" border="1px" width="80%">
 		<thead>
 			<tr>
-				<th>Login</th>
-				<th>Senha</th>
-				<th>Nome</th>
-				<th>Email</th>
+				<th>Título</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="usuario" items="${usuarios}">
-				<tr ng-repeat="usuario in usuarios">
-
-					<td>${usuario.login}</td>
-					<td>${usuario.senha}</td>
-					<td>${usuario.nome}</td>
-					<td>${usuario.email}</td>
-					<td><a href="deletarUsuario?id_usuario=${usuario.id_usuario}">
+			<c:forEach var="secao" items="${secoes}">
+				<tr ng-repeat="secao in secoes">
+					<td>${secao.titulo }</td>				
+					<!--
+					<td><a href="deletarNoticia?id_noticia=${noticia.id_noticia}">
 							Excluir </a></td>
+					 -->
 				</tr>
 			</c:forEach>
 		</tbody>

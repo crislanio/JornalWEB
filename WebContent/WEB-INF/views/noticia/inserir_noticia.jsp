@@ -19,7 +19,7 @@
 		<form:errors cssStyle="color:red" path="noticia.titulo"/> <br />
 		<select name="id" >
 			<c:forEach var="secao" items = "${categoriaNoticias}">
-				<option value=" ${secao.id} ">${secao.titulo}</option>
+				<option value=" ${secao.id_secao} ">${secao.titulo}</option>
 			</c:forEach>
 		</select>
 			
@@ -31,6 +31,8 @@
 		<form:errors cssStyle="color:red" path="noticia.autor"/> <br />
 		Data da Notícia: <input type="date" name="data_noticia" /> <br />
 		<form:errors cssStyle="color:red" path="noticia.data_noticia"/> <br />
+		
+		<input  type="hidden" name="id_autor" value="${usuario.id_usuario}">
 		
 		<input type="submit" value="Inserir" /> <br />
 	</form>

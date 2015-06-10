@@ -11,27 +11,26 @@
 	<c:import url="/includes/cabecalho.jsp" />
 
 	<h1>
-		Listar usuarios: <b>${tamanho}</b>
+		Listar Noticias: <b>${tamanho}</b>
 	</h1>
-
+	
 	<table align="center" border="1px" width="80%">
 		<thead>
 			<tr>
-				<th>Login</th>
-				<th>Senha</th>
-				<th>Nome</th>
-				<th>Email</th>
+			<!-- 	<th>Autor</th>  -->
+				<th>Título</th>
+				<th>Subtítulo</th>
+				<th>Data notícia</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="usuario" items="${usuarios}">
-				<tr ng-repeat="usuario in usuarios">
-
-					<td>${usuario.login}</td>
-					<td>${usuario.senha}</td>
-					<td>${usuario.nome}</td>
-					<td>${usuario.email}</td>
-					<td><a href="deletarUsuario?id_usuario=${usuario.id_usuario}">
+			<c:forEach var="noticia" items="${noticias}">
+				<tr ng-repeat="noticia in noticias">
+			<!--	<td>${noticia.autor.nome }</td>  -->
+					<td>${noticia.titulo }</td>
+					<td>${noticia.subtitulo }</td>
+					<td>${noticia.data_noticia }</td>
+					<td><a href="deletarNoticia?id_noticia=${noticia.id_noticia}">
 							Excluir </a></td>
 				</tr>
 			</c:forEach>

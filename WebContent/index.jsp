@@ -13,8 +13,9 @@
 		
 	<div class="linha">
 		<section>
-			<c:import url="includes/secao_extra.jsp"/>
-			<c:import url="includes/secao_extra2.jsp"/>
+			<c:import url="includes/secao_editor.jsp"/>
+			<c:import url="includes/secao_jornalista.jsp"/>
+			<c:import url="includes/secao_leitor.jsp"/>
 		</section>
 	</div>
 	

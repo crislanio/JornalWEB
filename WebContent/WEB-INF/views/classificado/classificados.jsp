@@ -12,7 +12,7 @@
 		<center>
 	Classificado<br>
 	<c:forEach var="classificado" items="${classificados}">
-		<table border=1 cellspacing=0 cellpadding=2 bordercolor="666633">
+		<table border=1 cellspacing=1 cellpadding=3 bordercolor="780570">
 			<tr>
 				<td>Titulo</td>
 				<td>${classificado.titulo }</td>
@@ -53,6 +53,7 @@
 			
 		<table><br>
 	</c:forEach>
+	
 	</center>
 
 </body>

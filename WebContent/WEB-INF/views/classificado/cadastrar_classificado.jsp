@@ -21,16 +21,11 @@
     
     <script src="assets/js/modernizr.custom.js"></script>
 
-	<div class="linha">
-		<section>
-	<footer> <c:import url="/includes/rodape.jsp" /> </footer>
-		</section>
-	</div>
 </head>
 <body>
 	
 	<h1>Cadastrar Classificado</h1>
-	<form action="cadastrar_classificado" method="post">
+	<form action="cadastrarClassificado" method="post">
 		Titulo   :<input type="text" name="titulo"><br> 
 		Texto    :<input type="text" name="texto"><br>
 		Telefone :<input type="text" name="telefone"><br>
@@ -40,7 +35,13 @@
 		<input type="submit"><br>
 	</form>
 
-
+  <div class="linha">
+		<section>
+	            <footer>
+	            	 <c:import url="/includes/rodape.jsp" /> 
+	            </footer>
+		</section>
+	</div>
 	<!-- Javascript files -->
 
 	<script src="assets/js/jquery-1.11.1.min.js"></script>

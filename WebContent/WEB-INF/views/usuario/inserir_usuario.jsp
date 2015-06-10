@@ -21,7 +21,7 @@
 		<form:errors cssStyle="color:red" path="usuario.senha"/> <br />
 		Email: <input type="text" name="email" /> <br />
 		<form:errors cssStyle="color:red" path="usuario.email"/> <br />
-		 <input type="hidden" name="id_role" value="2">
+		 <input type="hidden" name="id_role" value="1">
 		
 		<input type="submit" value="Inserir" /> <br />
 	</form>

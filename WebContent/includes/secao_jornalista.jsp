@@ -24,6 +24,12 @@
        
 </head>
 <body>
+<!-- 
+<c:forEach var="role" items="${usuario.roles}">
+			
+				<c:if test="${ role.papel=='jornalista'}">
+				
+-->			
 <section id="services" class="pfblock pfblock-gray">
 		<div class="container">
 			<div class="row">
@@ -52,9 +58,9 @@
 							<span class="icon-magic-wand"></span>
 						</div>
 						<div class="iconbox-text">
-							<h3 class="iconbox-title">Inserir Usuário</h3>
+							<h3 class="iconbox-title">Inserir Notícia</h3>
 							<div class="iconbox-desc">
-								<a href="formularioUsuario">Inserir Usuario no Jornal</a>
+							<a href="formularioNoticia">Inserir uma Notícia no Jornal</a>
 							</div>
 						</div>
 					</div>
@@ -68,9 +74,9 @@
 							<span class="icon-puzzle"></span>
 						</div>
 						<div class="iconbox-text">
-							<h3 class="iconbox-title">Inserir Notícia</h3>
+							<h3 class="iconbox-title">Listar Notícia</h3>
 							<div class="iconbox-desc">
-								<a href="formularioNoticia">Inserir uma Notícia no Jornal</a>
+								<a href="listarNoticia">Listar Notícia</a>
 							</div>
 						</div>
 					</div>
@@ -84,9 +90,9 @@
 							<span class="icon-badge"></span>
 						</div>
 						<div class="iconbox-text">
-							<h3 class="iconbox-title">Listar Usuários</h3>
+							<h3 class="iconbox-title">Listar Classificados</h3>
 							<div class="iconbox-desc">
-							<a href="listarUsuario">Listar Usuários Cadastrados</a>
+							<a href="classificados">Listar Classificados Cadastrados</a>
 							</div>
 						</div>
 					</div>
@@ -112,7 +118,11 @@
 			</div><!-- .row -->
 		</div><!-- .container -->
 	</section>
-
+<!-- 
+	</c:if>	
+				
+</c:forEach>
+-->
 <!-- Javascript files -->
 
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
