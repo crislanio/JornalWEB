@@ -29,25 +29,34 @@ public class NoticiaController {
 	@Autowired
 	private SecaoDAO secaoDAO;
 	
+	@RequestMapping("Noticia")
+	public String Noticia(Model model){
+		
+		List<Noticia> noticias = noticiaDAO.listar();
+		model.addAttribute("noticias", noticias);
+		model.addAttribute("tamanho", noticias.size());
+		System.out.println("Ver Noticia>>> "+ noticias.toString());
+		return "noticia/noticia";
+		
+	}
 	@RequestMapping("formularioNoticia")
 	public String formularioNoticia(Model model){
 		
 		List<Secao> categoriaNoticias = secaoDAO.listar();
 		model.addAttribute("categoriaNoticias",categoriaNoticias);
+		System.out.println("categoria noticias "+categoriaNoticias.toString());
+		
 		return "noticia/inserir_noticia";
 		
 	}
 	
 	@RequestMapping("adicionarNoticia")
-	public String addNoticia(BindingResult result, Noticia noticia,long id_autor,long id_secao){
-		if (result.hasErrors()) {
-			return "inserir_noticia";
-		}
-		//Buscar usuário autor
+	public String addNoticia( Noticia noticia,long id_autor,long id_secao){
+		//Search Author
 		Usuario usuario = new Usuario();
 		usuario.setId_usuario(id_autor);
 		usuario = usuarioDAO.buscar(usuario);
-		//Buscar Seção
+		//Searche Section
 		Secao secao = new Secao();
 		secao.setId_secao(id_secao);
 		secao = secaoDAO.buscar(secao);
@@ -57,7 +66,15 @@ public class NoticiaController {
 		noticia.setData_noticia(new Date());
 		noticiaDAO.add(noticia);
 		
-		return "redirect:formularioNoticia";
+		// teste
+		System.err.println("noticia  "+ noticia.getId_noticia());
+		System.err.println("titulo  "+noticia.getTitulo());
+		System.err.println("autor  "+noticia.getAutor());
+		System.err.println("secao  "+secao.getTitulo());
+		
+		
+		
+		return "usuario/noticia_adicionado";
 	} 
 	
 	@RequestMapping("listarNoticia")

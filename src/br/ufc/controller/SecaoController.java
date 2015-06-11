@@ -22,15 +22,19 @@ public class SecaoController {
 	
 	
 	@RequestMapping("formularioSecao")
-	private String formularioSecao(HttpSession session){
+	/*private String formularioSecao(HttpSession session){
+	*/
+	private String formularioSecao(){
+			
 		// verificar se o cara é Editor
-		Role role = (Role) session.getAttribute("role");
-		System.out.println("papel "+role.getPapel());
+	//	Role role = (Role) session.getAttribute("role");
+	//	System.out.println("papel "+role.getPapel());
 		
-		if (role != null && role.getPapel().equals("editor"))
+		/*if (role != null && role.getPapel().equals("editor"))
 			return "secao/cadastrar_secao";
 		else
-			return "redirect:formularioLogin";
+			return "redirect:formularioLogin";*/
+		return "secao/cadastrar_secao";
 	}
 	
 	

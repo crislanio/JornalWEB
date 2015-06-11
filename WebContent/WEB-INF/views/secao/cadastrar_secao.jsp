@@ -15,9 +15,9 @@
 	
 	
 	<form  action="cadastrarSecao" method="post">
-		Título: <input type="text" name="titulo" /> <br />
+		Título:<br /> <input type="text" name="titulo" /> <br />
 		<form:errors cssStyle="color:red" path="secao.titulo"/> <br />
-		Descrição: <textarea name="texto" id="mensagem"></textarea><br />
+		Descrição:<br /> <textarea name="texto" id="mensagem"></textarea><br />
 		<form:errors cssStyle="color:red" path="secao.descricao"/> <br />
 		
 		<input type="submit" value="Inserir" /> <br />

@@ -55,6 +55,11 @@
 	</c:forEach>
 	
 	</center>
-
+	
+	<section>
+		<footer> <c:import url="/includes/rodape.jsp" /> </footer>
+	</section>
+	
+	</div>
 </body>
 </html>

@@ -48,7 +48,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/Jornal/">home</a></li>
 						<li><a href="/Jornal/consultar_no_dominio_ufc.jsp">consulte no dominio ufc</a></li>
-						<li><a href="/Jornal/noticias.jsp">Ver Notícias</a></li>
+						<li><a href="/Jornal/Noticia">Ver Notícias</a></li>
 						<li><a href="/Jornal/contato.jsp">contato</a></li>
 						<li><a href="/Jornal/formularioLogin">login</a></li>
 					

@@ -50,7 +50,7 @@
 
 					<div class="iconbox wow slideInLeft">
 						<div class="iconbox-icon">
-							<span class="icon-magic-wand"></span>
+							<span class="icon-puzzle"></span>
 						</div>
 						<div class="iconbox-text">
 							<h3 class="iconbox-title">Cadastre-se</h3>

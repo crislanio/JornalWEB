@@ -24,7 +24,8 @@
 </head>
 <body>
 <!-- Portfolio start -->
-
+	<c:import url="includes/cabecalho.jsp"/>
+	
 	<section id="portfolio" class="pfblock">
 		<div class="container">
 			<div class="row">
@@ -157,5 +158,15 @@
 	</section>
 
 	<!-- Portfolio end -->
+	
+	<div class="linha">
+		<section>
+			<footer> 
+				<c:import url="includes/rodape.jsp" />
+			 </footer>
+		</section>
+	</div>
+	
+	
 </body>
 </html>

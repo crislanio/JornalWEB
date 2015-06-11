@@ -18,7 +18,7 @@
 			<c:import url="includes/secao_leitor.jsp"/>
 		</section>
 	</div>
-	
+	<a href="listarUsuario">Listar Usuarios</a>
 	<center>
 		<div class="linha"> 
 			<!-- begin PAGE SAPERE AUDE FACEBOOK -->

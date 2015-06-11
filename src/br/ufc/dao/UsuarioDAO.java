@@ -23,16 +23,20 @@ public class UsuarioDAO {
 	
 	public void add(Usuario usuario) {
 		// TODO Auto-generated method stub
+		System.out.println("chega ou n"+ usuario.getNome());
 		this.manager.persist(usuario);	
 		
 	}
 
 	public void deletar(Usuario usuario) {
 		// TODO Auto-generated method stub
-		Usuario usuario2 =  buscar(usuario);
-		
+//		Usuario u2 =  buscar(usuario);
+		System.out.println("buscar usuario remove "+usuario);
 	
-		this.manager.remove(usuario2);
+		Usuario usuarioRef = this.manager.find(Usuario.class, usuario.getId_usuario());
+		this.manager.remove(usuarioRef);
+		
+//		this.manager.remove(u2);
 	
 		
 	}

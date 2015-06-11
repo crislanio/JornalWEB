@@ -57,7 +57,12 @@ public class UsuarioController {
 		usuario.setRoles(papeis);
 		
 		this.usuarioDAO.add(usuario);
-				
+			
+		System.out.println("Aquiiii está");
+		System.out.println("nome "+usuario.getNome());
+		System.out.println("email "+usuario.getEmail());
+		System.out.println("id "+role.getId_role());
+		
 		return "usuario/usuario_adicionado";
 	}
 	@RequestMapping("listarUsuario")
@@ -67,6 +72,9 @@ public class UsuarioController {
 		model.addAttribute("usuarios", usuarios);
 		model.addAttribute("tamanho", usuarios.size());
 
+		System.out.println("teste vazia "+usuarios.size());
+		
+		
 		return "usuario/listar_usuarios";
 	}
 	

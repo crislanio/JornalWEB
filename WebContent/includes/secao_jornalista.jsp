@@ -24,38 +24,26 @@
        
 </head>
 <body>
-<!-- 
-<c:forEach var="role" items="${usuario.roles}">
+			<!--  
+			<c:forEach var="role" items="${usuarioQQ.rolesQQ}">
 			
-				<c:if test="${ role.papel=='jornalista'}">
-				
--->			
+				<c:if test="${ role.papelQQ=='jornalista'}">
+				</c:if>	
+			</c:forEach>
+	-->
+	
 <section id="services" class="pfblock pfblock-gray">
+		
+
 		<div class="container">
-			<div class="row">
-
-				<div class="col-sm-6 col-sm-offset-3">
-
-					<div class="pfblock-header wow fadeInUp">
-						<h2 class="pfblock-title">Colabore com esse projeto</h2>
-						<div class="pfblock-line"></div>
-						<div class="pfblock-subtitle">
-							Esse projeto tem uma iniciativa de divulgação da 
-							<a href="http://www.quixada.ufc.br/" target="_blank">Universidade Federal do Ceará</a>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
+		
 			<div class="row">
 
 				<div class="col-sm-3">
 
 					<div class="iconbox wow slideInLeft">
 						<div class="iconbox-icon">
-							<span class="icon-magic-wand"></span>
+							<span class="icon-puzzle"></span>
 						</div>
 						<div class="iconbox-text">
 							<h3 class="iconbox-title">Inserir Notícia</h3>
@@ -116,13 +104,11 @@
 				</div>
 
 			</div><!-- .row -->
+			
+		
 		</div><!-- .container -->
 	</section>
-<!-- 
-	</c:if>	
-				
-</c:forEach>
--->
+
 <!-- Javascript files -->
 
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
