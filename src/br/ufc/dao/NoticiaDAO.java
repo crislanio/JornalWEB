@@ -4,12 +4,14 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
 import br.ufc.model.Noticia;
 
 @Repository
+@Transactional
 public class NoticiaDAO {
 	
 	@PersistenceContext
