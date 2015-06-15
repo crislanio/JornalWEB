@@ -27,6 +27,10 @@
 
 		
 <section id="services" class="pfblock pfblock-gray">
+		<c:forEach var="role" items="${usuario.roles}">
+			
+				<c:if test="${ role.papel=='editor'}">
+		
 		<div class="container">
 				<div class="row">
 
@@ -96,6 +100,10 @@
 
 			</div><!-- .row -->
 		</div><!-- .container -->
+		
+		</c:if>	
+			</c:forEach>
+			
 	</section>
 
 <!-- Javascript files -->

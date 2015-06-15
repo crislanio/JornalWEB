@@ -17,6 +17,10 @@
 	<link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
 	<link href="assets/css/simple-line-icons.css" rel="stylesheet" media="screen">
 	<link href="assets/css/animate.css" rel="stylesheet">
+	
+	<link href="bootstrap-3.3.4-dist" rel="stylesheet">
+	<link href="css/estiloLogin.css" rel="stylesheet">
+	
     
 	<!-- Custom styles CSS -->
 	<link href="assets/css/style.css" rel="stylesheet" media="screen">

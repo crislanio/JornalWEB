@@ -58,10 +58,7 @@ public class UsuarioController {
 		
 		this.usuarioDAO.add(usuario);
 			
-		System.out.println("Aquiiii está");
-		System.out.println("nome "+usuario.getNome());
-		System.out.println("email "+usuario.getEmail());
-		System.out.println("id "+role.getId_role());
+		 
 		
 		return "usuario/usuario_adicionado";
 	}

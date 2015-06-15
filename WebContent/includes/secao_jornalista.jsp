@@ -24,17 +24,17 @@
        
 </head>
 <body>
-			<!--  
-			<c:forEach var="role" items="${usuarioQQ.rolesQQ}">
+			 
 			
-				<c:if test="${ role.papelQQ=='jornalista'}">
-				</c:if>	
-			</c:forEach>
-	-->
+				
+
 	
 <section id="services" class="pfblock pfblock-gray">
 		
-
+<c:forEach var="role" items="${usuario.roles}">
+			
+				<c:if test="${ role.papel=='jornalista'}">
+				
 		<div class="container">
 		
 			<div class="row">
@@ -107,6 +107,9 @@
 			
 		
 		</div><!-- .container -->
+		
+		</c:if>	
+			</c:forEach>
 	</section>
 
 <!-- Javascript files -->

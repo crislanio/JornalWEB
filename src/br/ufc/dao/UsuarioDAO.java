@@ -4,9 +4,9 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.ufc.model.Usuario;
 
@@ -25,7 +25,7 @@ public class UsuarioDAO {
 	
 	public void add(Usuario usuario) {
 		// TODO Auto-generated method stub
-		System.out.println("chega ou n"+ usuario.getNome());
+		System.out.println("chega de novo "+ usuario.getNome());
 		this.manager.persist(usuario);	
 		
 	}
