@@ -14,6 +14,7 @@ import br.ufc.dao.ClassificadoDAO;
 import br.ufc.dao.UsuarioDAO;
 import br.ufc.model.Classificado;
 // import br.ufc.model.Usuario;
+import br.ufc.model.Usuario;
 
 
 
@@ -33,7 +34,9 @@ public class ClassificadoController {
 	@RequestMapping("cadastrarClassificado")
 	public String addClassificado( HttpSession session, Classificado classificado){
 		classificadoDAO.add(classificado);
-		return "redirect:formularioClassificado";
+		System.out.println("aqui controler classificado ");
+		
+		return "classificado/classificado_adicionado";
 		
 	}
 	
@@ -48,6 +51,15 @@ public class ClassificadoController {
 	@RequestMapping("ofertar")
 	public String ofertar(long id_classificado){
 		return "classificado/ofertaDeCompra";
+	}
+	
+	@RequestMapping("deletarClassificado")
+	public String deletarClassificado(Classificado u) {
+
+		
+		classificadoDAO.deletar(u); 
+		
+		return "redirect:classificados";
 	}
 	
 }

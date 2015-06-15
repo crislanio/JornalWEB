@@ -13,16 +13,14 @@
 
 	<div class="container">
 
-		<form class="form-signin" action="fazerLogin" method="post">
 			<c:if test="${usuario!=null }">
 				<h1>Bem vindo,${usuario.nome}</h1>
 			</c:if>
-
-			<h2 class="form-signin-heading">EFETUAR LOGIN</h2>
-
-			<label for="inputEmail" class="sr-only">Email address</label> <input
-				name="login" type="email" id="inputEmail" class="form-control"
-				placeholder="Email address" required autofocus> <label
+			
+		<form class="form-signin" action="fazerLogin" method="post">
+			<label for="inputEmail" class="sr-only">Login </label> <input
+				name="login" type="text" class="form-control"
+				placeholder="Login" required autofocus> <label
 				for="inputPassword" class="sr-only">Password</label> <input
 				name="senha" type="password" id="inputPassword" class="form-control"
 				placeholder="Password" required>

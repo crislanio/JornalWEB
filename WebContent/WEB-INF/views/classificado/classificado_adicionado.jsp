@@ -10,16 +10,20 @@
 <title>Notícia Adicionado</title>
 </head>
 <body>
-<c:import url="/includes/cabecalho.jsp"/>
-	A notícia <b>${param.titulo}</b> foi adicionado com sucesso!<br />
+	<c:import url="/includes/cabecalho.jsp"/>
+
+	O classificado <b>${param.titulo}</b> foi adicionado com sucesso!<br />
 	<a href="index.jsp">Página principal</a>
-	
+
+	<div class="linha">
+			<section>
+				<footer> <c:import url="/includes/rodape.jsp" /> </footer>
+			</section>
+	</div>
 	<div class="linha">
 		<section>
-	
 			<footer> <c:import url="/includes/rodape.jsp" /> </footer>
 		</section>
 	</div>
-	
 </body>
 </html>

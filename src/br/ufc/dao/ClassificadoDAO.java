@@ -24,7 +24,7 @@ public class ClassificadoDAO {
 	public void add(Classificado classificado) {
 		// TODO Auto-generated method stub
 		
-		
+		System.out.println("classificado ate aqui !!");
 		this.manager.persist(classificado);
 				
 		

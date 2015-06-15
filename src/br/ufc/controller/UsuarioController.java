@@ -55,7 +55,7 @@ public class UsuarioController {
 		List<Role> papeis = new ArrayList<Role>(); 
 		papeis.add(papel);
 		usuario.setRoles(papeis);
-		
+		System.err.println("Papel user : "+usuario.getRoles());
 		this.usuarioDAO.add(usuario);
 			
 		 

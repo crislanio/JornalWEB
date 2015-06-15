@@ -2,8 +2,6 @@ package br.ufc.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.ufc.dao.SecaoDAO;
-import br.ufc.model.Role;
 import br.ufc.model.Secao;
 @Transactional
 @Controller
@@ -36,12 +33,16 @@ public class SecaoController {
 			return "redirect:formularioLogin";*/
 		return "secao/cadastrar_secao";
 	}
-	
+	@RequestMapping("formListarSecao")
+	private String formListarSecao(){
+		return "secao/listar_secao";
+	}
 	
 	@RequestMapping("cadastrarSecao")
 	private String addSecao(Secao secao){
-		System.out.println(secao.getTitulo());
-		System.out.println(secao.getDescricao());
+		System.out.println("titulo secao " +secao.getTitulo());
+		System.out.println("descricao "+secao.getDescricao());
+		
 		secaoDAO.add(secao);
 		return "secao/secao_adicionado";
 	}
@@ -51,8 +52,10 @@ public class SecaoController {
 		List<Secao> secoes = secaoDAO.listar();
 		model.addAttribute("secoes", secoes);
 		model.addAttribute("tamanho", secoes.size());
-
-		return "usuario/listar_secao";
+		System.out.println("seções tam : "+ secoes.size());
+		System.out.println("seções controller : "+ secoes);
+		
+		return "secao/listar_secao";
 	}
 	
 	@RequestMapping("deletarSecao")

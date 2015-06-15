@@ -42,5 +42,7 @@
 	 <footer> <c:import url="/includes/feed_noticias.jsp" /> </footer>
 	<footer> <c:import url="/includes/rodape.jsp" /> </footer>
 		</section>
-	</div></body>
+	</div>
+	
+	</body>
 </html>

@@ -1,13 +1,12 @@
 package br.ufc.dao;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import br.ufc.model.Secao;
 
 
@@ -22,7 +21,7 @@ public class SecaoDAO  {
 
 	public void add(Secao secao) {
 		// TODO Auto-generated method stub
-		System.out.println("AQui!");
+		System.out.println("AQui secao!");
 		this.manager.persist(secao);
 	}
 

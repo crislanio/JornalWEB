@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
@@ -5,17 +6,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Lista dos classificados</title>
 </head>
 <body>
 <c:import url="/includes/cabecalho.jsp"/>
 		<center>
 	Classificado<br>
 	<c:forEach var="classificado" items="${classificados}">
+		
 		<table border=1 cellspacing=1 cellpadding=3 bordercolor="780570">
 			<tr>
 				<td>Titulo</td>
 				<td>${classificado.titulo }</td>
+				<td>Id</td>
+				<td><a href="deletarClassificado?id_classificado=${classificado.id_classificado }">
+							Excluir </a></td>
 			</tr>
 			<tr>	
 				<td>Descrição</td>

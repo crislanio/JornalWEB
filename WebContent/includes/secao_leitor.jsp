@@ -71,7 +71,7 @@
 						<div class="iconbox-text">
 							<h3 class="iconbox-title">Ver Categorias</h3>
 							<div class="iconbox-desc">
-								<a href="listarSecao">Manchetes</a>
+								<a href="formListarSecao">Manchetes</a>
 							</div>
 						</div>
 					</div>
