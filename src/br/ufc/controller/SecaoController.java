@@ -45,8 +45,7 @@ public class SecaoController {
 		sc.setDescricao(secao.getDescricao());
 
 		System.out.println("kkk "+secaoDAO);
-		this.secaoDAO.add(sc); // nao chegou
-
+		this.secaoDAO.add(sc); // yes
 		System.out.println("nulo ou n");
 		return "secao/secao_adicionado";
 	}

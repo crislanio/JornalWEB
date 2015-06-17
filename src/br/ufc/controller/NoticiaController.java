@@ -47,8 +47,8 @@ public class NoticiaController {
 	}
 
 	@RequestMapping("adicionarNoticia")
-	public String addNoticia(Noticia noticia, long id_autor, long id_secao) {
-		System.err.println("chegou porra");
+	public String adicionarNoticia(Noticia noticia, long id_autor, long id_secao) {
+		System.err.println("chegou nnnnnnnn");
 		
 		// Search Author
 		Usuario usuario = new Usuario();
@@ -75,7 +75,7 @@ public class NoticiaController {
 		System.err.println("autor  " + noticia.getAutor());
 		System.err.println("secao  " + secao.getTitulo());
 
-		return "usuario/noticia_adicionado";
+		return "noticia/noticia_adicionado";
 	}
 
 	@RequestMapping("listarNoticia")

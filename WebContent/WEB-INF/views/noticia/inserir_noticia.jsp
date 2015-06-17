@@ -29,22 +29,29 @@
 		
 		Texto: <br /><textarea name="texto" id="mensagem"></textarea><br />
 		<form:errors cssStyle="color:red" path="noticia.texto"/> <br />
-		
-		Autor: <br /><input type="text" name="autor" /> <br />
+		<input type="hidden" name="autor" value="${noticia.autor}"></br>	
+	 	 
+		<!-- Não precisa pegar o nome somente o id -->
+		<%-- 	Autor: <br /><input type="text" name="autor" /> <br />
 		<form:errors cssStyle="color:red" path="noticia.autor"/> <br />
-		
+		 --%>
+		 
 		Data da Notícia:<br /> <input type="date" name="data_noticia" /> <br />
 		<form:errors cssStyle="color:red" path="noticia.data_noticia"/> <br />
-		
-		<input  type="hidden" name="id_autor" value="${usuario.id_usuario}">
-		
+		<%-- 
+		<input  type="hidden" name="id_autor" value="${usuario.id_usuario}"> --%>
+	 	 <input type="hidden" name="id_autor" value="${usuario.id_usuario}"></br>	
+	 	 <input type="hidden" name="id_secao" value="${secao.id_secao}"></br>	
+	 	 
 		<input type="submit" value="Inserir" /> <br />
 	</form>
 	
 	<div class="linha">
 		<section>
-	 <footer> <c:import url="/includes/feed_noticias.jsp" /> </footer>
-	<footer> <c:import url="/includes/rodape.jsp" /> </footer>
+			 <footer> 	
+			 		<c:import url="/includes/feed_noticias.jsp" /> 
+			 		<c:import url="/includes/rodape.jsp" />
+			  </footer>
 		</section>
 	</div>
 	

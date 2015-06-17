@@ -13,47 +13,41 @@ import br.ufc.model.Noticia;
 @Repository
 @Transactional
 public class NoticiaDAO {
-	
+
 	@PersistenceContext
 	private EntityManager manager;
-	
+
 	public NoticiaDAO() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public void add(Noticia noticia) {
-		// TODO Auto-generated method stub
-		
-		
+		System.out.println("chega ou nao > " + noticia.getTitulo());
 		this.manager.persist(noticia);
-				
-		
+
 	}
 
 	public void deletar(Noticia noticia) {
-		// TODO Auto-generated method stub
-		Noticia noticia2 =  buscar(noticia);
+		Noticia noticia2 = buscar(noticia);
 		this.manager.remove(noticia2);
-		
-		
+
 	}
 
 	public void alterar(Noticia noticia) {
-		// TODO Auto-generated method stub
-		this.manager.merge(noticia);		
-		
+		this.manager.merge(noticia);
+
 	}
 
 	public List<Noticia> listar() {
 		String hql = "select n from Noticia n";
-		return this.manager.createQuery(hql,Noticia.class).getResultList();
+		return this.manager.createQuery(hql, Noticia.class).getResultList();
 	}
 
 	public Noticia buscar(Noticia noticia) {
 		// TODO Auto-generated method stub
-		Noticia noticia2 = this.manager.find(Noticia.class,noticia.getId_noticia());
+		Noticia noticia2 = this.manager.find(Noticia.class,
+				noticia.getId_noticia());
 		return noticia2;
 	}
 
-	
 }

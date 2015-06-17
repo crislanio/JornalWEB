@@ -34,8 +34,8 @@ public class Noticia {
 	private String texto;
 	private Date data_noticia;
 	
-	private long id_secao;
-	
+	//private long id_sec;  // tem que colocar pra pegar a categoria
+  	
 
 	@ManyToOne(optional=false)
 	@JoinColumn(name="id_autor",referencedColumnName="id_usuario")
