@@ -34,6 +34,7 @@ public class Noticia {
 	private String texto;
 	private Date data_noticia;
 	
+	private long id_secao;
 	
 
 	@ManyToOne(optional=false)

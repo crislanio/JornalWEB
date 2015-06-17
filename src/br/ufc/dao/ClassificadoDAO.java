@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -59,5 +60,18 @@ public class ClassificadoDAO {
 		Classificado classificado2 = this.manager.find(Classificado.class, classificado.getId_classificado());
 		return classificado2;
 	}
+	
+public Classificado classificadoId(Long id){		
+	    
+        String hql = " SELECT c FROM Classificado c WHERE c.id_classificado = :id";  
+		
+		TypedQuery<Classificado> query = this.manager.createQuery(hql, Classificado.class);
+		query.setParameter("id", id).getResultList();
+		List<Classificado> classificados = query.getResultList();
+		Classificado c = classificados.get(0);
+		
+		return c;
+	}
+	
 
 }

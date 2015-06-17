@@ -9,6 +9,7 @@
 </head>
 <body>
 	<c:import url="/includes/cabecalho.jsp"/>
+	
 	<h1>Cadastrar Classificado</h1>
 	<form action="cadastrarClassificado" method="post">
 		Titulo   :<input type="text" name="titulo"><br> 

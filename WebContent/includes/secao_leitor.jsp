@@ -71,7 +71,7 @@
 						<div class="iconbox-text">
 							<h3 class="iconbox-title">Ver Categorias</h3>
 							<div class="iconbox-desc">
-								<a href="formListarSecao">Manchetes</a>
+								<a href="listarSecao">Categorias</a>
 							</div>
 						</div>
 					</div>
@@ -85,9 +85,9 @@
 							<span class="icon-badge"></span>
 						</div>
 						<div class="iconbox-text">
-							<h3 class="iconbox-title">NAO FEITO</h3>
+							<h3 class="iconbox-title">Listar Classificados</h3>
 							<div class="iconbox-desc">
-							<a href="formularioClassificado">Inserir Classificado</a>
+							<a href="listarClassificados">Listar Classificados Cadastrados</a>
 							</div>
 						</div>
 					</div>

@@ -80,7 +80,7 @@
 						<div class="iconbox-text">
 							<h3 class="iconbox-title">Listar Classificados</h3>
 							<div class="iconbox-desc">
-							<a href="classificados">Listar Classificados Cadastrados</a>
+							<a href="listarClassificados">Listar Classificados Cadastrados</a>
 							</div>
 						</div>
 					</div>

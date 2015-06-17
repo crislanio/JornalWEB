@@ -39,19 +39,18 @@ public class UsuarioDAO {
 		this.manager.remove(usuarioRef);
 		
 //		this.manager.remove(u2);
-	
 		
 	}
 
+	
+	public Usuario getUserId(Long id){
+		return this.manager.find(Usuario.class, id);
+	}
+	
 	public void alterar(Usuario usuario) {
 		// TODO Auto-generated method stub
-		
-	
 		this.manager.merge(usuario);
 	
-		
-		
-		
 	}
 
 	public List<Usuario> listar() {

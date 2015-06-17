@@ -6,8 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<title>Notícia Adicionado</title>
+<title>Classificado Adicionado</title>
 </head>
 <body>
 	<c:import url="/includes/cabecalho.jsp"/>
@@ -20,10 +19,6 @@
 				<footer> <c:import url="/includes/rodape.jsp" /> </footer>
 			</section>
 	</div>
-	<div class="linha">
-		<section>
-			<footer> <c:import url="/includes/rodape.jsp" /> </footer>
-		</section>
-	</div>
+	
 </body>
 </html>
