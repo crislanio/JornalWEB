@@ -1,7 +1,11 @@
 package br.ufc.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 // import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -13,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.ufc.criptografia.Criptografia;
 import br.ufc.dao.RoleDAO;
 import br.ufc.dao.UsuarioDAO;
 import br.ufc.model.Role;
@@ -43,7 +48,7 @@ public class UsuarioController {
 	}
 	
 	@RequestMapping("adicionarUsuario")
-	public String addLeitor(@Valid Usuario usuario,  BindingResult result,  Role role){
+	public String addLeitor(@Valid Usuario usuario,  BindingResult result,  Role role) throws NoSuchAlgorithmException, UnsupportedEncodingException{
 		if (result.hasErrors()) {
 			return "usuario/inserir_usuario";
 		}
@@ -56,6 +61,11 @@ public class UsuarioController {
 		papeis.add(papel);
 		usuario.setRoles(papeis);
 		System.err.println("Papel user : "+usuario.getRoles());
+		
+		Criptografia cs = new Criptografia();
+		usuario.setSenha(cs.criptografar(usuario.getSenha()));
+		
+		
 		this.usuarioDAO.add(usuario);
 			
 		 
