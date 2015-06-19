@@ -3,6 +3,8 @@ package br.ufc.controller;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,36 +49,23 @@ public class NoticiaController {
 	}
 
 	@RequestMapping("adicionarNoticia")
-	public String adicionarNoticia(Noticia noticia, long id_autor, long id_secao) {
+	public String adicionarNoticia(Noticia noticia, HttpSession session) {		
 		System.err.println("chegou nnnnnnnn");
+		Usuario usuario = (Usuario) session.getAttribute("usuario");
+		System.err.println(usuario);
 		
-		// Search Author
-		Usuario usuario = new Usuario();
-		usuario.setId_usuario(id_autor);
-		System.out.println("id user> " + id_autor);
-
-		usuario = usuarioDAO.buscar(usuario);
-
-		// Searche Section
-		Secao secao = new Secao();
-		secao.setId_secao(id_secao);
-		System.out.println("id secao> " + id_secao);
-
-		secao = secaoDAO.buscar(secao);
-
-		noticia.setAutor(usuario);
-		noticia.setSecao(secao);
-		noticia.setData_noticia(new Date());
-		noticiaDAO.add(noticia);
-
-		// teste
-		System.err.println("noticia  " + noticia.getId_noticia());
-		System.err.println("titulo  " + noticia.getTitulo());
-		System.err.println("autor  " + noticia.getAutor());
-		System.err.println("secao  " + secao.getTitulo());
-
+	    if(usuario == null){
+	        return "redirect:formularioNoticia";	
+	    }
+ 		 System.err.println("idsec "+noticia.getId_sec());
+		 noticia.setAutor(usuarioDAO.getUserId(usuario.getId_usuario()));
+		 noticia.setSecao(secaoDAO.getSecao(noticia.getId_sec()));
+		    
+				
+		this.noticiaDAO.add(noticia);
 		return "noticia/noticia_adicionado";
 	}
+
 
 	@RequestMapping("listarNoticia")
 	public String listaNoticias(Model model) {

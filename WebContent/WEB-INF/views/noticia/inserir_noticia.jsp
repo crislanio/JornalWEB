@@ -18,31 +18,21 @@
 		Título: <br /> <input type="text" name="titulo" /> 
 		<form:errors cssStyle="color:red" path="noticia.titulo"/>
 		
-		<select name="id_secao" >
+		<select name="id_sec" >
 			<c:forEach var="secao" items = "${categoriaNoticias}">
 				<option value=" ${secao.id_secao} ">${secao.titulo}</option>
 			</c:forEach>
 		</select>
 			<br />
+			
 		Subtítulo: <br /><input type="text" name="subtitulo" /> <br />
 		<form:errors cssStyle="color:red" path="noticia.subtitulo"/> <br />
 		
 		Texto: <br /><textarea name="texto" id="mensagem"></textarea><br />
 		<form:errors cssStyle="color:red" path="noticia.texto"/> <br />
-		<input type="hidden" name="autor" value="${noticia.autor}"></br>	
-	 	 
-		<!-- Não precisa pegar o nome somente o id -->
-		<%-- 	Autor: <br /><input type="text" name="autor" /> <br />
-		<form:errors cssStyle="color:red" path="noticia.autor"/> <br />
-		 --%>
 		 
 		Data da Notícia:<br /> <input type="date" name="data_noticia" /> <br />
 		<form:errors cssStyle="color:red" path="noticia.data_noticia"/> <br />
-		<%-- 
-		<input  type="hidden" name="id_autor" value="${usuario.id_usuario}"> --%>
-	 	 <input type="hidden" name="id_autor" value="${usuario.id_usuario}"></br>	
-	 	 <input type="hidden" name="id_secao" value="${secao.id_secao}"></br>	
-	 	 
 		<input type="submit" value="Inserir" /> <br />
 	</form>
 	

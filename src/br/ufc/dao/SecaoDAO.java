@@ -56,6 +56,7 @@ public class SecaoDAO  {
 		return secao2;
 	}
 	
-	
-
+	public Secao getSecao(Long id){
+		return this.manager.find(Secao.class, id);
+	}
 }

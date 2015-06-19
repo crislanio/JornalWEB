@@ -10,19 +10,21 @@
 </head>
 <body>
 <c:import url="/includes/cabecalho.jsp"/>
-	<h4>
-	${noticia.secao.titulo }<br>
-	${noticia.data_noticia }<br>
-	Autor :${noticia.autor.nome }<br>
-	</h4>
-	<center>
-	<div>
-		<h1> ${noticia.titulo }</h1><br>	
-		<h2> ${noticia.subtitulo }</h2><br>
-		<h2> ${noticia.texto}</h2><br>
-	</div>	
-	</center>
-		
+		<ul>
+		<c:forEach var="noticia" items="${noticias}">
+			<li>
+			<div id="div_noticia">
+				<h1>${noticia.titulo }</h1>
+				<h3>${noticia.subtitulo}</h3>
+				<div id="texto_noticia">
+					${noticia.texto}
+				</div>
+				<h6>${noticia.autor.nome}</h6>
+			</div>
+			</li>
+		</c:forEach>
+	</ul>
+	
 <div class="linha">
 		<section>
 				<footer> <c:import url="/includes/rodape.jsp" /> </footer>

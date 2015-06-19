@@ -24,18 +24,28 @@ public class Noticia {
 	@Column(name="id_noticia", nullable=false)
 	private long id_noticia;
 	@NotNull
-	@Size(min = 10)
+	@Size(min = 6)
 	private String titulo;
 	@NotNull
 	@Size(min = 5)
 	private String subtitulo;
 	@NotNull
-	@Size(min = 50)
+	@Size(min = 15)
 	private String texto;
 	private Date data_noticia;
 	
-	//private long id_sec;  // tem que colocar pra pegar a categoria
+	private long id_sec;  // tem que colocar pra pegar a categoria
   	
+
+	public long getId_sec() {
+		return id_sec;
+	}
+
+
+	public void setId_sec(long id_sec) {
+		this.id_sec = id_sec;
+	}
+
 
 	@ManyToOne(optional=false)
 	@JoinColumn(name="id_autor",referencedColumnName="id_usuario")
