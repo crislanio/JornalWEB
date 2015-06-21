@@ -18,7 +18,6 @@ public class Comentario {
 	@GeneratedValue
 	private long id_comentario;
 	@NotNull
-	@Size(min = 10)
 	private String texto;
 	
 	

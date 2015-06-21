@@ -23,7 +23,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost/jornal_sapereaude" />
 		<property name="username" value="root" />
-		<property name="password" value="zabbix" />
+		<property name="password" value="crs2747" />
 	</bean> 
 	
 	<bean

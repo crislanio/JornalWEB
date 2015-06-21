@@ -7,9 +7,21 @@ import java.security.NoSuchAlgorithmException;
 public class Criptografia {
 	
 	// by amanda modify by crislanio
-	public String criptografar(String senha) throws NoSuchAlgorithmException, UnsupportedEncodingException{
-		MessageDigest algoritmo = MessageDigest.getInstance("SHA-256");
-		byte msgDigest[] = algoritmo.digest(senha.getBytes("UTF-8"));
+	public String criptografar(String senha){
+		MessageDigest algoritmo = null;
+		try {
+			algoritmo = MessageDigest.getInstance("SHA-256");
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		byte msgDigest[] = null;
+		try {
+			msgDigest = algoritmo.digest(senha.getBytes("UTF-8"));
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		StringBuilder hexString = new StringBuilder();
 		

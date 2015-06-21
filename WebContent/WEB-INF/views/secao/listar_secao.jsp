@@ -23,8 +23,10 @@
 		<tbody>
 			<c:forEach var="secao" items="${secoes}">
 				<tr ng-repeat="secao in secoes">
-					<td>${secao.titulo }</td>				
-					<!--
+					<c:if test="${not empty secao.noticias}">
+						<td> <a href="descSecao?id_secao=${secao.id_secao}">${secao.titulo }</a> </td>
+					</c:if>
+						<!--
 					<td><a href="deletarNoticia?id_noticia=${noticia.id_noticia}">
 							Excluir </a></td>
 					 -->

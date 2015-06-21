@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.ufc.dao.SecaoDAO;
+import br.ufc.model.Noticia;
 import br.ufc.model.Secao;
 
 @Transactional
@@ -50,6 +51,14 @@ public class SecaoController {
 		return "secao/secao_adicionado";
 	}
 
+	@RequestMapping("descSecao")
+	public String descSecao(Secao secao,Model model){
+		secao = secaoDAO.buscar(secao);
+		List<Noticia> noticias = secao.getNoticias();
+		model.addAttribute("noticias",noticias);
+		return "noticia/noticia";
+	}
+	
 	@RequestMapping("listarSecao")
 	public String listarSecao(Model model) {
 

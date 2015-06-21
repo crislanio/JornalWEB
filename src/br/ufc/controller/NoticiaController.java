@@ -1,6 +1,5 @@
 package br.ufc.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -22,16 +21,25 @@ import br.ufc.model.Usuario;
 @Controller
 public class NoticiaController {
 	@Autowired
-	private UsuarioDAO usuarioDAO;
+	private UsuarioDAO uDAO;
 	@Autowired
-	private NoticiaDAO noticiaDAO;
+	private NoticiaDAO nDAO;
 	@Autowired
-	private SecaoDAO secaoDAO;
+	private SecaoDAO sDAO;
 
+	@RequestMapping("lerNoticia")
+	public String lerNoticia(Noticia noticia, Model model) {
+		
+		Noticia n = nDAO.buscar(noticia);
+		System.out.println("noticia> "+ n.getTitulo());
+		
+		model.addAttribute("noticia", n);
+		return "noticia/noticia_detalhada";
+	}
 	@RequestMapping("verNoticia")
 	public String Noticia(Model model) {
 
-		List<Noticia> noticias = noticiaDAO.listar();
+		List<Noticia> noticias = nDAO.listar();
 		model.addAttribute("noticias", noticias);
 		model.addAttribute("tamanho", noticias.size());
 		System.out.println("Ver Noticia>>> " + noticias.toString());
@@ -42,7 +50,7 @@ public class NoticiaController {
 	@RequestMapping("formularioNoticia")
 	public String formularioNoticia(Model model) {
 
-		List<Secao> categoriaNoticias = secaoDAO.listar();
+		List<Secao> categoriaNoticias = sDAO.listar();
 		model.addAttribute("categoriaNoticias", categoriaNoticias);
 		return "noticia/inserir_noticia";
 
@@ -50,7 +58,6 @@ public class NoticiaController {
 
 	@RequestMapping("adicionarNoticia")
 	public String adicionarNoticia(Noticia noticia, HttpSession session) {		
-		System.err.println("chegou nnnnnnnn");
 		Usuario usuario = (Usuario) session.getAttribute("usuario");
 		System.err.println(usuario);
 		
@@ -58,18 +65,18 @@ public class NoticiaController {
 	        return "redirect:formularioNoticia";	
 	    }
  		 System.err.println("idsec "+noticia.getId_sec());
-		 noticia.setAutor(usuarioDAO.getUserId(usuario.getId_usuario()));
-		 noticia.setSecao(secaoDAO.getSecao(noticia.getId_sec()));
+		 noticia.setAutor(uDAO.getUserId(usuario.getId_usuario()));
+		 noticia.setSecao(sDAO.getSecao(noticia.getId_sec()));
 		    
 				
-		this.noticiaDAO.add(noticia);
+		this.nDAO.add(noticia);
 		return "noticia/noticia_adicionado";
 	}
 
 
 	@RequestMapping("listarNoticia")
 	public String listaNoticias(Model model) {
-		List<Noticia> noticias = noticiaDAO.listar();
+		List<Noticia> noticias = nDAO.listar();
 		model.addAttribute("noticias", noticias);
 		model.addAttribute("tamanho", noticias.size());
 
@@ -77,18 +84,19 @@ public class NoticiaController {
 	}
 
 	@RequestMapping("deletarNoticia")
-	public String apagarNoticias(Noticia noticia) {
-		System.err.println(noticia.getId_noticia());
-
-		noticiaDAO.deletar(noticia);
-		return "redirect:listar_noticia";
+	public String deletarNoticia(Noticia noticia) {
+		
+		nDAO.deletar(noticia);
+		return "noticia/listar_noticia";
 	}
+		
+	
+	@RequestMapping("deletarNoticiaGeral")
+	public String deletarNoticiaGeral(Noticia noticia) {
 
-	@RequestMapping("ler_noticia")
-	public String lerNoticia(Noticia noticia, Model model) {
-		noticia = noticiaDAO.buscar(noticia);
-		model.addAttribute("noticia", noticia);
+		nDAO.deletar(noticia);
 		return "noticia/noticia";
 	}
+	
 
 }

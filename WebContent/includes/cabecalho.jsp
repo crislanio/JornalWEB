@@ -29,9 +29,6 @@
    	
 </head>
 <body>
-</body>
-</html>
-
 <header class="header"  >
 
 		<nav class="navbar navbar-custom" role="navigation">
@@ -88,6 +85,9 @@
 		</nav>
 
 	</header>
+
+</body>
+</html>
 
 
 

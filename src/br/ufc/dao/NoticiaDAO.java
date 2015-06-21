@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.ufc.model.Noticia;
+import br.ufc.model.Secao;
 
 @Repository
 @Transactional
@@ -19,6 +20,10 @@ public class NoticiaDAO {
 
 	public NoticiaDAO() {
 
+	}
+
+	public Noticia getNoticiaId(Long id){
+		return this.manager.find(Noticia.class, id);
 	}
 
 	public void add(Noticia noticia) {
@@ -44,10 +49,12 @@ public class NoticiaDAO {
 	}
 
 	public Noticia buscar(Noticia noticia) {
-		// TODO Auto-generated method stub
-		Noticia noticia2 = this.manager.find(Noticia.class,
+		Noticia not2 = this.manager.find(Noticia.class,
 				noticia.getId_noticia());
-		return noticia2;
+		return not2;
+	}
+	public Noticia getNoticia(Long id){
+		return this.manager.find(Noticia.class, id);
 	}
 
 }

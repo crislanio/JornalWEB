@@ -17,22 +17,32 @@
 				<h1>Bem vindo,${usuario.nome}</h1>
 			</c:if>
 			
-		<form class="form-signin" action="fazerLogin" method="post">
-			<label for="inputEmail" class="sr-only">Login </label> <input
-				name="login" type="text" class="form-control"
-				placeholder="Login" required autofocus> <label
-				for="inputPassword" class="sr-only">Password</label> <input
-				name="senha" type="password" id="inputPassword" class="form-control"
-				placeholder="Password" required>
-			<div class="checkbox">
-				<label> <input type="checkbox" value="remember-me">
-					Remember me
-				</label>
-			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
-				in</button>
+		<c:if test="${usuario==null }">
+			
+			<form class="form-signin" action="fazerLogin" method="post">
+				<label for="inputEmail" class="sr-only">Login </label> <input
+					name="login" type="text" class="form-control"
+					placeholder="Login" required autofocus> <label
+					for="inputPassword" class="sr-only">Password</label> <input
+					name="senha" type="password" id="inputPassword" class="form-control"
+					placeholder="Password" required>
+				<div class="checkbox">
+					<label> <input type="checkbox" value="remember-me">
+						Remember me
+					</label>
+				</div>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
+					in</button>
 		</form>
-
+		</c:if>
+		<c:if test="${usuario!=null }">
+			<form class="form-signout" action="Logout">
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
+				out</button>
+		</form>
+		
+		</c:if>
+				
 	</div>
 
 

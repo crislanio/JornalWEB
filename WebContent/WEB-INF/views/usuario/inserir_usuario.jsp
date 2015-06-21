@@ -17,7 +17,7 @@
 		<form:errors cssStyle="color:red" path="usuario.nome"/> <br />
 		Login: <input type="text" name="login"><br />
 		<form:errors cssStyle="color:red" path="usuario.login"/> <br />
-		Senha: <input type="text" name="senha" /> <br />
+		Senha: <input type="password" name="senha" /> <br />
 		<form:errors cssStyle="color:red" path="usuario.senha"/> <br />
 		Email: <input type="text" name="email" /> <br />
 		<form:errors cssStyle="color:red" path="usuario.email"/> <br />

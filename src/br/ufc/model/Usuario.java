@@ -143,6 +143,15 @@ public class Usuario {
 		return roles;
 	}
 
+	public boolean getRole(String role){
+		 for(Role r: roles){
+		 	if (r.getPapel().equals("leitor") ) {
+		 		return true;
+		 	}
+		 }
+		 return false;
+	}
+
 
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
