@@ -33,10 +33,21 @@ public class Noticia {
 	@Size(min = 15)
 	private String texto;
 	private Date data_noticia;
+	@Column(name="caminho", nullable = false)
+	private String caminho_imagem;
 	
 	private long id_sec;  // tem que colocar pra pegar a categoria
   	
 
+	public String getCaminho_imagem() {
+		return caminho_imagem;
+	}
+
+
+	public void setCaminho_imagem(String caminho_imagem) {
+		this.caminho_imagem = caminho_imagem;
+	}
+	
 	public long getId_sec() {
 		return id_sec;
 	}

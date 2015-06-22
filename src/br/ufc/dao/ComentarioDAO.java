@@ -51,10 +51,10 @@ public class ComentarioDAO {
 
 	public List<Comentario> comentarios(long id_noticia){
         
-		String hql = " SELECT c FROM COMENTARIO c WHERE c.id_noticia = :id_noticia";  
+		String hql = " SELECT c FROM Comentario c WHERE c.noticia.id_noticia = :id_noticia";  
 		
 		TypedQuery<Comentario> query = this.manager.createQuery(hql, Comentario.class);
-		query.setParameter("id_noticia", id_noticia).getResultList();
+		query.setParameter("id_noticia", id_noticia);
 		List<Comentario> comentarios = query.getResultList();
 		
 		return comentarios;

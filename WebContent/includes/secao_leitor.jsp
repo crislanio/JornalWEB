@@ -114,6 +114,8 @@
 		</div><!-- .container -->
 	</section>
 
+ <a href="formularioEditor">Inserir Editor</a> 
+
 <!-- Javascript files -->
 
 	<script src="assets/js/jquery-1.11.1.min.js"></script>

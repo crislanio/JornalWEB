@@ -14,7 +14,7 @@
 	<h1>Inserir Noticia</h1>
 	
 	
-	<form  action="adicionarNoticia" method="post">
+	<form  method="POST" enctype="multipart/form-data" action="add_noticia">
 		Título: <br /> <input type="text" name="titulo" /> 
 		<form:errors cssStyle="color:red" path="noticia.titulo"/>
 		
@@ -30,6 +30,12 @@
 		
 		Texto: <br /><textarea name="texto" id="mensagem"></textarea><br />
 		<form:errors cssStyle="color:red" path="noticia.texto"/> <br />
+		 
+		 <div >
+			<label >Imagem</label> 
+			<input type="file" name="file">
+			
+		</div>
 		 
 		Data da Notícia:<br /> <input type="date" name="data_noticia" /> <br />
 		<form:errors cssStyle="color:red" path="noticia.data_noticia"/> <br />

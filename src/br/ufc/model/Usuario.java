@@ -37,7 +37,7 @@ public class Usuario {
 	private String senha;
 	@NotNull
 	private String email;
-	
+	private String caminho_imagem;
 	
 	
 	@OneToMany(mappedBy="autor",targetEntity=Classificado.class,fetch = FetchType.LAZY)
@@ -58,7 +58,14 @@ public class Usuario {
 				inverseJoinColumns =@JoinColumn(name="id_role" , referencedColumnName="id_role"))
 	private List<Role> roles;
 
-	
+	public String getCaminho_imagem() {
+		return caminho_imagem;
+	}
+
+
+	public void setCaminho_imagem(String caminho_imagem) {
+		this.caminho_imagem = caminho_imagem;
+	}
 	public long getId_usuario() {
 		return id_usuario;
 	}

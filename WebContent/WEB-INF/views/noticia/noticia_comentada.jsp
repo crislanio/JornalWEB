@@ -30,19 +30,19 @@
        					  <c:forEach var="comentario" items="${comentarios}" >
 			   	         <div>
             				    <div>
-               		   				 <h2> Autor Comentário: </h2>
-					                 <h2> ${comentario.autor.nome }</h2>
+               		   				 <h5> Autor Comentário: </h5>
+					                 <h4> ${comentario.autor.nome }</h4>
 			   		             </div>
                 
-            				    <h2> Comentário: </h2>
+            				    <h4> Comentário: </h4>
               				   	<div>
 									${comentario.texto }
 								</div>
             				 </div> 			 
 		 	      	  </c:forEach>
        				</div>
-       			</c:if>	
-	   </c:forEach>
+       				</c:if>	
+	 		  </c:forEach>
 	   
 	</ul>
 	

@@ -47,8 +47,8 @@ public class ComentarioController {
 			noticia.setComentarios(c);
 			
 			model.addAttribute("noticia",noticia);
-			model.addAttribute("comentarios",noticia.getComentarios()); // pegando os comentarios da notica
-			
+			//model.addAttribute("comentarios",noticia.getComentarios()); // pegando os comentarios da notica
+			model.addAttribute("comentarios", cDAO.comentarios(id_noticia));
 			
 			return "noticia/noticia_comentada"; 
 				

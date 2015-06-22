@@ -1,5 +1,9 @@
 package br.ufc.controller;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -9,6 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import br.ufc.dao.NoticiaDAO;
 import br.ufc.dao.SecaoDAO;
@@ -29,13 +36,14 @@ public class NoticiaController {
 
 	@RequestMapping("lerNoticia")
 	public String lerNoticia(Noticia noticia, Model model) {
-		
+
 		Noticia n = nDAO.buscar(noticia);
-		System.out.println("noticia> "+ n.getTitulo());
-		
+		System.out.println("noticia> " + n.getTitulo());
+
 		model.addAttribute("noticia", n);
 		return "noticia/noticia_detalhada";
 	}
+
 	@RequestMapping("verNoticia")
 	public String Noticia(Model model) {
 
@@ -57,22 +65,61 @@ public class NoticiaController {
 	}
 
 	@RequestMapping("adicionarNoticia")
-	public String adicionarNoticia(Noticia noticia, HttpSession session) {		
+	public String adicionarNoticia(Noticia noticia, HttpSession session) {
 		Usuario usuario = (Usuario) session.getAttribute("usuario");
 		System.err.println(usuario);
-		
-	    if(usuario == null){
-	        return "redirect:formularioNoticia";	
-	    }
- 		 System.err.println("idsec "+noticia.getId_sec());
-		 noticia.setAutor(uDAO.getUserId(usuario.getId_usuario()));
-		 noticia.setSecao(sDAO.getSecao(noticia.getId_sec()));
-		    
-				
+
+		if (usuario == null) {
+			return "redirect:formularioNoticia";
+		}
+		System.err.println("idsec " + noticia.getId_sec());
+		noticia.setAutor(uDAO.getUserId(usuario.getId_usuario()));
+		noticia.setSecao(sDAO.getSecao(noticia.getId_sec()));
+
 		this.nDAO.add(noticia);
 		return "noticia/noticia_adicionado";
 	}
 
+	@RequestMapping(value = "add_noticia", method = RequestMethod.POST)
+	public String addNoticia(Noticia noticia, HttpSession session, Secao secao,
+			@RequestParam("file") MultipartFile file) {
+
+		if (!file.isEmpty()) {
+			try {
+
+				String nomeImg = new Date().getTime() + "-"
+						+ file.getOriginalFilename();
+				String imagem = "/home/ufc/JornalSapereAude/imagens/" + nomeImg;
+
+				byte[] bytes = file.getBytes();
+				BufferedOutputStream stream = new BufferedOutputStream(
+						new FileOutputStream(new File(imagem)));
+				stream.write(bytes);
+				stream.close();
+
+				// Set imagem
+				noticia.setCaminho_imagem(nomeImg);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				return "";
+			}
+		} else {
+			return "";
+		}
+		Usuario usuario = (Usuario) session.getAttribute("usuario");
+		System.err.println(usuario);
+
+		if (usuario == null) {
+			return "redirect:formularioNoticia";
+		}
+		System.err.println("idsec " + noticia.getId_sec());
+		noticia.setAutor(uDAO.getUserId(usuario.getId_usuario()));
+		noticia.setSecao(sDAO.getSecao(noticia.getId_sec()));
+
+		this.nDAO.add(noticia);
+		return "noticia/noticia_adicionado";
+	}
 
 	@RequestMapping("listarNoticia")
 	public String listaNoticias(Model model) {
@@ -85,18 +132,16 @@ public class NoticiaController {
 
 	@RequestMapping("deletarNoticia")
 	public String deletarNoticia(Noticia noticia) {
-		
+
 		nDAO.deletar(noticia);
 		return "noticia/listar_noticia";
 	}
-		
-	
+
 	@RequestMapping("deletarNoticiaGeral")
 	public String deletarNoticiaGeral(Noticia noticia) {
 
 		nDAO.deletar(noticia);
 		return "noticia/noticia";
 	}
-	
 
 }

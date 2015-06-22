@@ -12,7 +12,7 @@
 	<c:import url="/includes/cabecalho.jsp" />
 	
 	<h1>Inserir Usuario</h1>
-	<form  action="adicionarUsuario" method="post">
+	<form  action="adicionarUsuarioJornalista" enctype="multipart/form-data" method="post">
 		Nome: <input type="text" name="nome" /> <br />
 		<form:errors cssStyle="color:red" path="usuario.nome"/> <br />
 		Login: <input type="text" name="login"><br />
@@ -22,6 +22,11 @@
 		Email: <input type="text" name="email" /> <br />
 		<form:errors cssStyle="color:red" path="usuario.email"/> <br />
 		 <input type="hidden" name="id_role" value="3">
+		
+		<div>
+			<label for="exampleInputEmail1">Imagem</label> 
+			<input type="file" name="file">		
+		</div>
 		
 		<input type="submit" value="Inserir" /> <br />
 	</form>

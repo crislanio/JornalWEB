@@ -17,11 +17,18 @@
 				<h2 align="left">  ${noticia.secao.titulo } <br/> ${noticia.data_noticia } </h2>
 		     	    <h1> ${noticia.titulo } </h1>
    			   		<h3> ${noticia.subtitulo } </h3>
+   			   	
+   			   		<c:if test="${noticia.caminho_imagem != nul}">
+						<img src="/imagens/${noticia.caminho_imagem}" alt="..." class="img-thumbnail">	
+					</c:if>
+   		   		
    		   			<h4><b>Autor da Noticia:</b> ${noticia.autor.nome }</h4>
 		      		 <div id="texto_noticia">
 						${noticia.texto}
 				  	</div> 	
-    		</div>
+				  	
+			
+			</div>
 			<c:forEach var="role" items="${usuario.roles}">	
 		   
         	   <c:if test="${role.papel=='editor'}"> 
@@ -44,6 +51,25 @@
 							<input type="submit"  name="Comentar" >
 						</form> 
 				</c:if>	
+			
+				<c:forEach var="role" items="${usuario.roles}">	
+		   
+						<div id="id_comentario" align="left">
+       						  <c:forEach var="comentario" items="${comentarios}" >
+			   	    	     <div>
+            					    <div>
+               		   					 <h5> Autor Comentário: </h5>
+					            	     <h4> ${comentario.autor.nome }</h4>
+				   		             </div>
+                
+    	        				    <h4> Comentário: </h4>
+        	      				   	<div>
+										${comentario.texto }
+									</div>
+            					 </div> 			 
+		 	      	 	 </c:forEach>
+       					</div>
+       		 </c:forEach>
 				
 	   </c:forEach>
 	</ul>

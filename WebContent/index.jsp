@@ -6,8 +6,8 @@
 <head>
 </head>
 <body>
-	<%-- <c:import url="includes/apresentacao.jsp"/>
-	 --%><c:import url="includes/cabecalho.jsp"/>
+	 <c:import url="includes/apresentacao.jsp"/> 
+	 <c:import url="includes/cabecalho.jsp"/>
 	
 		<!-- <a href="Login"> Logar</a> <br><br> -->
 		
