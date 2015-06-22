@@ -13,7 +13,7 @@ Projeto para IDE **Eclipse Luna** utilizando framework *Spring 4 + Hibernate 4 +
 - JPA API 2+
 
 ### Contexto da Aplicação Web
-Jornal SApere Aude
+Jornal Sapere Aude
 > localhost:8080/Jornal/
 
 | Aplicação                     | Versão        |
