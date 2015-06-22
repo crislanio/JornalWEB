@@ -66,7 +66,7 @@ public class UsuarioController {
 			try {
 				String nomeImg = new Date().getTime() + "-"
 						+ file.getOriginalFilename();
-				String imagem = "/home/ufc/JornalSapereAude/imagens/" + nomeImg;
+				String imagem = "/home/ufc/JornalSapereAude/imagens/imagens_jornalista/" + nomeImg;
 
 				byte[] bytes = file.getBytes();
 				BufferedOutputStream stream = new BufferedOutputStream(
@@ -79,11 +79,8 @@ public class UsuarioController {
 
 			} catch (Exception e) {
 				e.printStackTrace();
-				return "";
 			}
-		} else {
-			return "";
-		}
+		} 
 
 		papeis.add(papel);
 		usuario.setRoles(papeis);

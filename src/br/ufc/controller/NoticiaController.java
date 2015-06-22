@@ -89,24 +89,24 @@ public class NoticiaController {
 
 				String nomeImg = new Date().getTime() + "-"
 						+ file.getOriginalFilename();
-				String imagem = "/home/ufc/JornalSapereAude/imagens/" + nomeImg;
+				String imagem = "/home/ufc/JornalSapereAude/imagens/imagens_noticia/" + nomeImg;
 
+				System.out.println("aqui !!!");
 				byte[] bytes = file.getBytes();
 				BufferedOutputStream stream = new BufferedOutputStream(
 						new FileOutputStream(new File(imagem)));
 				stream.write(bytes);
 				stream.close();
 
+				System.out.println("name image: "+nomeImg);
 				// Set imagem
 				noticia.setCaminho_imagem(nomeImg);
+				System.out.println("deu certo!");
 
 			} catch (Exception e) {
 				e.printStackTrace();
-				return "";
 			}
-		} else {
-			return "";
-		}
+		} 
 		Usuario usuario = (Usuario) session.getAttribute("usuario");
 		System.err.println(usuario);
 

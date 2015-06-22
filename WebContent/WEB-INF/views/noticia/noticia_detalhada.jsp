@@ -5,7 +5,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Notícia Detalhada</title>
 </head>
 <body>
@@ -18,8 +17,8 @@
 		     	    <h1> ${noticia.titulo } </h1>
    			   		<h3> ${noticia.subtitulo } </h3>
    			   	
-   			   		<c:if test="${noticia.caminho_imagem != nul}">
-						<img src="/imagens/${noticia.caminho_imagem}" alt="..." class="img-thumbnail">	
+   			   		<c:if test="${noticia.caminho_imagem != null}">
+						<img src="/imagens/imagens_noticia/${noticia.caminho_imagem}" alt="img noticia" class="img-thumbnail">	
 					</c:if>
    		   		
    		   			<h4><b>Autor da Noticia:</b> ${noticia.autor.nome }</h4>
@@ -58,12 +57,10 @@
        						  <c:forEach var="comentario" items="${comentarios}" >
 			   	    	     <div>
             					    <div>
-               		   					 <h5> Autor Comentário: </h5>
-					            	     <h4> ${comentario.autor.nome }</h4>
+               		   					 <h6> Autor Comentário: </h6>
+					            	     <h5> ${comentario.autor.nome }</h5>
 				   		             </div>
-                
-    	        				    <h4> Comentário: </h4>
-        	      				   	<div>
+        	        				<div>
 										${comentario.texto }
 									</div>
             					 </div> 			 
