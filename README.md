@@ -38,5 +38,5 @@ Demonstrar conhecimento dos seguintes aspectos de programação:
 # Para mais informações leia os requisitos do trabalho na pasta Docs.
 
 ### Screenshots
-![alt tag](https://github.com/crislanio/JornalWEB/blob/master/Docs/Trabalho_-_Jornal.pdf)
+![alt tag](https://raw.githubusercontent.com/crislanio/JornalWEB/master/WebContent/public/assets/images/cover-.jpg)
 
