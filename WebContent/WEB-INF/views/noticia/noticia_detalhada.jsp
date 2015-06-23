@@ -18,10 +18,13 @@
    			   		<h3> ${noticia.subtitulo } </h3>
    			   	
    			   		<c:if test="${noticia.caminho_imagem != null}">
-						<img src="/imagens/imagens_noticia/${noticia.caminho_imagem}" alt="img noticia" class="img-thumbnail">	
+						<img src="/imagens_noticia/${noticia.caminho_imagem}" alt="img noticia" class="img-thumbnail">	
 					</c:if>
    		   		
    		   			<h4><b>Autor da Noticia:</b> ${noticia.autor.nome }</h4>
+   		   			<c:if test="${noticia.caminho_imagem != null}">
+						<img src="/imagens_jornalista/${noticia.autor.caminho_imagem}" alt="img autor" width="64" height="64"">	
+					</c:if>
 		      		 <div id="texto_noticia">
 						${noticia.texto}
 				  	</div> 	

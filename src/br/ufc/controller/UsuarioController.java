@@ -52,39 +52,33 @@ public class UsuarioController {
 	@RequestMapping(value = "adicionarUsuarioJornalista", method = RequestMethod.POST)
 	public String cadastrarJornalista(@Valid Usuario usuario, Role role,
 			BindingResult result, @RequestParam("file") MultipartFile file) {
+
 		Criptografia cs = new Criptografia();
 		usuario.setSenha(cs.criptografar(usuario.getSenha()));
-		if (result.hasErrors()) {
-			return "usuario/inserir_usuario";
-		}
-
 		Role papel = roleDAO.buscar(role);
 		List<Role> papeis = new ArrayList<Role>();
-		// Arquivo
+
+		papeis.add(papel);
+		usuario.setRoles(papeis);
 
 		if (!file.isEmpty()) {
 			try {
 				String nomeImg = new Date().getTime() + "-"
 						+ file.getOriginalFilename();
-				String imagem = "/home/ufc/JornalSapereAude/imagens/imagens_jornalista/" + nomeImg;
+				String imagem = "/home/ufc/JornalSapereAude/imagens/imagens_jornalista/"
+						+ nomeImg;
 
 				byte[] bytes = file.getBytes();
 				BufferedOutputStream stream = new BufferedOutputStream(
 						new FileOutputStream(new File(imagem)));
 				stream.write(bytes);
 				stream.close();
-
-				// Set imagem
 				usuario.setCaminho_imagem(nomeImg);
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} 
-
-		papeis.add(papel);
-		usuario.setRoles(papeis);
-
+		}
 		this.usuarioDAO.add(usuario);
 
 		return "usuario/usuario_adicionado";

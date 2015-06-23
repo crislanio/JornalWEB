@@ -15,6 +15,10 @@
 	
 			<div id="manchete">
 				<h2 align="left">  ${noticia.secao.titulo } <br/> ${noticia.data_noticia } </h2>
+		     	  	<c:if test="${noticia.caminho_imagem != null}">
+						<img src="/imagens_noticia/${noticia.caminho_imagem}" alt="img noticia" class="img-thumbnail">	
+					</c:if>
+   		   		
 		     	    <h1> ${noticia.titulo } </h1>
    			   		<h3> ${noticia.subtitulo } </h3>
    		   			<h4><b>Autor da Noticia:</b> ${noticia.autor.nome }</h4>

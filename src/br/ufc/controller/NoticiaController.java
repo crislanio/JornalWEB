@@ -98,11 +98,7 @@ public class NoticiaController {
 				stream.write(bytes);
 				stream.close();
 
-				System.out.println("name image: "+nomeImg);
-				// Set imagem
 				noticia.setCaminho_imagem(nomeImg);
-				System.out.println("deu certo!");
-
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
