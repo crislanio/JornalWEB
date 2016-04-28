@@ -1,7 +1,7 @@
 # JornalWEB
 Aplicação WEB Jornal: usando java
 
-Jornal Sapere Aude  http://geek.890m.com/
+Jornal Sapere Aude  http://www.crislaniomacedo.zz.vc/about
 Projeto para IDE **Eclipse Luna** utilizando framework *Spring 4 + Hibernate 4 + JPA + Suporte para Tomcat 8*; Um schema completo para aplicações *Web MVC em Java*. Incluído suporte *JavaX Validation, JSTL, MySql* (ORM com suporte a transações) .
 
 ## Dependências
